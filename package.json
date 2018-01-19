@@ -1,0 +1,18 @@
+{
+  "name": "humanium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "express": "4.16.2",
+    "nodemon": "1.14.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm run start-api",
+    "start-api": "nodemon api/app.js"
+  },
+  "author": "Gaelle Calmels",
+  "license": "MIT"
+}
