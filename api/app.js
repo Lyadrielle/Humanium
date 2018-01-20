@@ -20,7 +20,3 @@ app.use(router)
 
 app.listen(PORT)
 logger.log('normal', `Humanium server started on port ${PORT} !`)
-
-async function hello() {
-  return 'Hello World !'
-}

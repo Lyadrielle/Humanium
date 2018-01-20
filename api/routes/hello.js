@@ -3,6 +3,6 @@ module.exports = {
   handler: hello,
 }
 
-async function hello() {
-  return 'Hello World ! (nested version ;p)'
+async function hello(title, content, encodage) {
+  return 'Hello World !'
 }

@@ -8,7 +8,10 @@
     "express": "4.16.2",
     "nodemon": "1.14.11"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-plugin-react": "^7.5.1"
+  },
   "scripts": {
     "start": "npm run start-api",
     "start-api": "nodemon api/app.js"
