@@ -56,8 +56,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-#Clion IDE
-.idea
-cmake-build-debug
-CmakeList.txt
