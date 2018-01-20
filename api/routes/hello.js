@@ -4,5 +4,5 @@ module.exports = {
 }
 
 async function hello() {
-  return 'Hello World !'
+  return 'Hello World ! (nested version ;p)'
 }
