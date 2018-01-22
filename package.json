@@ -6,15 +6,23 @@
   "dependencies": {
     "body-parser": "1.18.2",
     "express": "4.16.2",
-    "nodemon": "1.14.11"
+    "nodemon": "1.14.11",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "1.1.0"
   },
   "devDependencies": {
-    "eslint": "^4.16.0",
-    "eslint-plugin-react": "^7.5.1"
+    "eslint": "4.16.0",
+    "eslint-plugin-react": "7.5.1"
   },
   "scripts": {
-    "start": "npm run start-api",
-    "start-api": "nodemon api/app.js"
+    "start": "npm run start-api && npm run start-front",
+    "start-api": "nodemon api/app.js",
+    "start-front": "react-scripts start",
+    "build-front": "react-scripts build",
+    "test-front": "react-scripts test --env=jsdom",
+    "eject-front": "react-scripts eject"
   },
   "author": "Gaelle Calmels",
   "license": "MIT"
