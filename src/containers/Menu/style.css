@@ -1,6 +1,15 @@
 .menu {
+  /* ========[ POSITION ]======= */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
   width: 100%;
-  border-style: solid;
-  border-color: rgb(0, 0, 0);
-  border-width: 2px;
+  height: 40px;
+
+  /* =========[ COLOR ]======== */
+  background-color: #151515;
+
+  /* =========[ OTHER ]========= */
+  overflow: hidden;
 }

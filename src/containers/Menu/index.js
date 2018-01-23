@@ -10,9 +10,12 @@ class Menu extends Component {
     return (
       <div className="menu">
         <GlitchButton
-          text="Home"
+          text="Film"
+          onClick={() => this.props.history.push('/Film')}
+        />
+        <GlitchButton
+          text="Humanium"
           onClick={() => this.props.history.push('/')}
-          style={{ marginRight: 5 }}
         />
         <GlitchButton
           text="Project"

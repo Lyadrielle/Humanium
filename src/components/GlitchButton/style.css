@@ -1,14 +1,23 @@
 .glitch {
-  color: white;
-  font-size: 20px;
+  /* ========[ POSITION ]======= */
   position: relative;
+  display: inline-block;
   margin: 0 auto;
+  padding: 5px;
+
+  /* =========[ FONTS ]========= */
+  font-size: 20px;
+
+  /* =========[ COLOR ]========= */
+  color: white;
+  background: #151515;
+
+  /* =========[ OTHER ]========= */
   cursor: pointer;
   border: none;
-  background: black;
-  display: inline-block;
-  padding: 5px;
   outline: none;
+
+  /* =======[ ANIMATION ]======= */
 }
 @keyframes noise-anim {
   0% {
@@ -76,14 +85,21 @@
   }
 }
 .glitch:hover:after {
+  /* ========[ POSITION ]======= */
   content: attr(data-text);
   position: absolute;
   left: 7px;
-  text-shadow: -1px 0 red;
   top: 5px;
+
+  /* =========[ COLOR ]========= */
   color: white;
-  background: black;
+  text-shadow: -1px 0 red;
+  background: #151515;
+
+  /* =========[ OTHER ]========= */
   overflow: hidden;
+
+  /* =======[ ANIMATION ]======= */
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim 2s infinite linear alternate-reverse;
 }
@@ -153,14 +169,21 @@
   }
 }
 .glitch:hover:before {
+  /* ========[ POSITION ]======= */
   content: attr(data-text);
   position: absolute;
   left: 3px;
-  text-shadow: 1px 0 blue;
   top: 5px;
+
+  /* =========[ COLOR ]========= */
   color: white;
-  background: black;
+  text-shadow: 1px 0 green;
+  background: #151515;
+
+  /* =========[ OTHER ]========= */
   overflow: hidden;
+
+  /* =======[ ANIMATION ]======= */
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 3s infinite linear alternate-reverse;
 }
