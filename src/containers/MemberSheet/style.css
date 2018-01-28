@@ -1,0 +1,7 @@
+.member-sheet {
+    display:flex;
+    flex-direction: column;
+    color:white;
+    max-width: 20%;
+    align-items: center;
+}

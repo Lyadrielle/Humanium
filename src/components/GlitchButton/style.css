@@ -7,10 +7,10 @@
 
   /* =========[ FONTS ]========= */
   font-size: 20px;
-
+  font-variant: small-caps;
   /* =========[ COLOR ]========= */
   color: white;
-  background: #151515;
+  background:#070707;
 
   /* =========[ OTHER ]========= */
   cursor: pointer;
@@ -94,7 +94,7 @@
   /* =========[ COLOR ]========= */
   color: white;
   text-shadow: -1px 0 red;
-  background: #151515;
+  background: #070707;
 
   /* =========[ OTHER ]========= */
   overflow: hidden;
@@ -178,7 +178,7 @@
   /* =========[ COLOR ]========= */
   color: white;
   text-shadow: 1px 0 green;
-  background: #151515;
+  background: #070707;
 
   /* =========[ OTHER ]========= */
   overflow: hidden;

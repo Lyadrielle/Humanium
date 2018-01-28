@@ -1,0 +1,8 @@
+@import "~react-responsive-carousel/lib/styles/carousel.min.css";
+
+.no-interaction-slider {
+  width:15%;
+  min-height: 0;
+  min-width: 0;
+  max-height: 100%;
+}

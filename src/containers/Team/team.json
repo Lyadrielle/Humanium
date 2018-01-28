@@ -1,0 +1,34 @@
+[
+    {
+        "name" : "Estelle GUINGO",
+        "roles" : ["Front-end developper", "WebDesigner", "Community Manager"],
+        "image" : {
+            "src" :"./assets/images/estelle.jpg",
+            "alt" : "Estelle picture"
+        } 
+    },
+    {
+        "name" : "Gaëlle CALMELS",
+        "roles" : ["Back-end developper", "Graphist", "Perchman"],
+        "image" : {
+            "src" :"./assets/images/gaelle.jpg",
+            "alt" : "Gaelle picture"
+        } 
+    },
+    {
+        "name" : "Thibault GUICHARD",
+        "roles" : ["Co-Film Director", "Scenarist"],
+        "image" : {
+            "src" :"./assets/images/thibault.jpg",
+            "alt" : "Thibault picture"
+        } 
+    },
+    {
+        "name" : "Pierre FRANC",
+        "roles" : ["Co-Film Director", "Director of Photography"],
+        "image" : {
+            "src" :"./assets/images/pierre.jpg",
+            "alt" : "Pierre picture"
+        } 
+    }
+]

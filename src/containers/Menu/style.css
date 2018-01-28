@@ -6,9 +6,9 @@
   position: absolute;
   width: 100%;
   height: 40px;
-
+  background-color:#070707;
   /* =========[ COLOR ]======== */
-  background-color: #151515;
+
 
   /* =========[ OTHER ]========= */
   overflow: hidden;

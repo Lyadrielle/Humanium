@@ -1,6 +1,25 @@
+
 .project {
+/* ========[ POSITION ]======= */
   width: 100%;
-  border-style: solid;
-  border-color: rgb(0, 0, 0);
-  border-width: 2px;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+/* =========[ FONTS ]========= */
+
+/* =========[ COLOR ]========= */
+  background-image: url("~/assets/images/background.png");
+ 
+/* =========[ OTHER ]========= */
+  max-height: 100%;
+  /* =======[ ANIMATION ]======= */
+  
+}
+
+.team-button-text {
+  color:white;
+  cursor: pointer;
+  font-variant: small-caps;
 }
