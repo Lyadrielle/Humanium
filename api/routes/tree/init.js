@@ -1,0 +1,18 @@
+const { encrypt } = require('aes256')
+
+const choiceTree = require('../../ressources/ChoiceTreeStupid.json')
+const { updateContext } = require('../../core/context')
+
+module.exports = {
+  type: 'GET',
+  handler: initTreePath,
+}
+
+async function initTreePath(req) {
+  const { context } = req
+
+  return  {
+    success: true,
+    newContext: updateContext(context, { path: [choiceTree[0].id] })
+  }
+}
