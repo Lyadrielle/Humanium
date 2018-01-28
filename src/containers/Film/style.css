@@ -1,6 +1,6 @@
+
 .film {
   width: 100%;
-  border-style: solid;
-  border-color: rgb(0, 0, 0);
-  border-width: 2px;
+  height: 100%;
+  background-color: black;
 }

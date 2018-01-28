@@ -1,0 +1,27 @@
+.video-menu {
+    /* ========[ POSITION ]======= */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    bottom:0;
+    padding: 5px 0 5px 0;
+    margin: 0;
+    /* =========[ COLOR ]======== */
+    background-color: #151515;
+  }
+
+  .left-buttons, .center-buttons, .right-buttons {
+    display:flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .drop {
+    padding:0;
+    align-self: flex-end;
+    background-color: #151515;
+    text-align: center;
+  }
