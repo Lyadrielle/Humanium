@@ -4,12 +4,12 @@ const choiceTree = require('../../ressources/ChoiceTreeStupid.json')
 const { updateContext } = require('../../core/context')
 
 module.exports = {
-  type: 'GET',
+  type: 'POST',
   handler: updateTreePath,
 }
 
 async function updateTreePath(req) {
-  const { query: { next }, context } = req
+  const { body: { next }, context } = req
   const { path } = context
 
   const isNewNode = !path.includes(next)

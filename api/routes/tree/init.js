@@ -13,6 +13,7 @@ async function initTreePath(req) {
 
   return  {
     success: true,
+    currentNode: choiceTree[0],
     newContext: updateContext(context, { path: [choiceTree[0].id] })
   }
 }
