@@ -28,6 +28,9 @@ function addRoute(type, path, handler) {
         return res.send(buffer)
       }
       return res.send(result)
+    }).catch(e => {
+      logger.log('normal', e)
+      return res.send({ status: 500, message: e.message })
     })
   })
 }
