@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 
 module.exports = {
   type: 'GET',
@@ -7,5 +8,13 @@ module.exports = {
 
 async function handler(req) {
   const { query: { id } } = req
-  return `This is the Film request ${id}`
+
+  const videoName = `${id}.mp4`
+  const stream = fs.createReadStream(path.resolve(__dirname, `../../ressources/videos/${videoName}`))
+
+  return {
+    stream,
+    name: videoName,
+    mimeType: 'video/mp4'
+  }
 }
