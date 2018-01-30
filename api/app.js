@@ -8,7 +8,12 @@ const { contextLoader } = require('./core/context')
 const { router } = require('./core/routeManager')
 
 const app = express()
-const PORT = 42000
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  next()
+})
 
 app.use(bodyParser.json())
 
@@ -28,5 +33,5 @@ app.use((req, res, next) => {
 
 app.use(router)
 
-app.listen(PORT)
-logger.log('normal', `Humanium server started on port ${PORT} !`)
+app.listen($env.API_PORT)
+logger.log('normal', `Humanium server started on port ${$env.API_PORT} !`)
