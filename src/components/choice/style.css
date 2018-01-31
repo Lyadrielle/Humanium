@@ -1,0 +1,11 @@
+.choice {
+  width: 500px;
+  height: 500px;
+  top: calc(100% - 250px);
+  left: calc(100% - 250px);
+  background-color: orange;
+}
+
+.choice:focus {
+  background-color: orangered;
+}

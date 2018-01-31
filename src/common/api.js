@@ -14,4 +14,8 @@ async function post({ path, body = {}, headers = {}, params = {} }) {
   return request.data
 }
 
-export default { get, post }
+function generateVideoLink(id) {
+  return `${apiUrl}film/video?id=${id}`
+}
+
+export default { get, post, generateVideoLink }
