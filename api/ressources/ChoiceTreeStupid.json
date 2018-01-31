@@ -2,7 +2,7 @@
   {
     "id": "intro",
     "name": "Gaelle want to use the Nutella",
-    "video": "nutella_intro",
+    "video": "intro",
     "type": "Choice",
     "choices": [
       {
@@ -21,7 +21,7 @@
   {
     "id": "fight",
     "name": "Bataille pour le nutella",
-    "video": "nutella_battle",
+    "video": "battle",
     "type": "QTE",
     "success": "toast",
     "failure": "depression",
@@ -32,7 +32,7 @@
   {
     "id": "toast",
     "name": "Gaelle make a nutella toast",
-    "video": "nutella_toast",
+    "video": "toast",
     "type": "Cinematic",
     "next": "end02"
   },
@@ -40,7 +40,7 @@
   {
     "id": "depression",
     "name": "Gaelle is depressed",
-    "video": "nutella_depression",
+    "video": "depression",
     "type": "Cinematic",
     "next": "end02"
   },
@@ -48,7 +48,7 @@
   {
     "id": "end01",
     "name": "Gaelle resist the temptation",
-    "video": "nutella_end01",
+    "video": "end01",
     "type": "Cinematic",
     "next": null
   },
@@ -56,7 +56,7 @@
   {
     "id": "end02",
     "name": "Gaelle return to work",
-    "video": "nutella_end02",
+    "video": "end02",
     "type": "Cinematic",
     "next": null
   }

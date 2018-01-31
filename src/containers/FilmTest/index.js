@@ -48,7 +48,7 @@ class FilmTest extends Component {
 function displayVideoPlayer(videoId) {
   return (
     <VideoPlayer
-      videoId="intro"
+      videoId={videoId}
     />
   )
 }
