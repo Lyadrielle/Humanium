@@ -22,7 +22,6 @@ class PageChoice extends Component {
       <div className="page-qte">
         <Choice
           choices={choices}
-          default={0}
           time={10}
           />
       </div>

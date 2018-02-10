@@ -8,6 +8,7 @@ import FilmTest from './containers/FilmTest'
 import Project from './containers/Project'
 import Team from './containers/Team'
 import PageQTE from './containers/pageQTE'
+import PageChoice from './containers/pageChoice'
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/project" exact component={Project} />
           <Route path="/team" exact component={Team} />
           <Route path="/qte" exact component={PageQTE} />
+          <Route path="/choice" exact component={PageChoice} />
         </div>
       </Router>
     )}
