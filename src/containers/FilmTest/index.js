@@ -9,7 +9,8 @@ import './style.css'
 
 class FilmTest extends Component {
   state = {
-    currentScene: null
+    currentScene: null,
+    executeAction: false,
   }
 
   async loadContext() {
@@ -26,7 +27,14 @@ class FilmTest extends Component {
       if (status === 500) localStorage.removeItem('context')
       return retryLoadContext()
     }
-    return this.setState({ currentScene: nodes[nodes.length - 1] })
+
+    const currentScene = nodes[nodes.length - 1]
+    const video = document.createElement('video')
+    video.src = api.generateVideoLink(currentScene.video)
+    return video.ondurationchange = () => {
+      setTimeout(() => this.setState({ executeAction: true }), 1000 * (video.duration - (currentScene.time || 0)))
+      this.setState({ currentScene })
+    }
   }
 
   componentDidMount() {
@@ -34,12 +42,19 @@ class FilmTest extends Component {
   }
 
   render() {
-    const { currentScene } = this.state
+    const { currentScene, executeAction } = this.state
     const { video } = currentScene || {}
+
+    const actionMap = {
+      Cinematic: () => null,
+      QTE: () => null,
+      Choice: ({ choices, time }) => displayChoice(choices, time)
+    }
 
     return (
       <div className="page-film">
         {video && displayVideoPlayer(video)}
+        {executeAction && actionMap[currentScene.type](currentScene)}
       </div>
     )
   }
@@ -63,8 +78,13 @@ function displayQTE() {
   )
 }
 
-function displayChoice() {
-  
+function displayChoice(choices, time) {
+  return (
+    <Choice
+      choices={choices}
+      time={time}
+    />
+  )
 }
 
 export default FilmTest

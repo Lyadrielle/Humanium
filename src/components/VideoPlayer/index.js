@@ -44,20 +44,20 @@ class FilmTest extends Component {
             videoTimeout: timeoutId
           })
       }}>
-      <ReactPlayer 
-        url={api.generateVideoLink(videoId)}
-        width='100%'
-        height='100%'
-        playing={playing}
-        volume={volume}
-        muted={muted}
-        onPlay={() => this.setState({playing: true})}
-        onPause={() => this.setState({playing: false})}
-      />
+        <ReactPlayer
+          url={api.generateVideoLink(videoId)}
+          width='100%'
+          height='100%'
+          playing={playing}
+          volume={volume}
+          muted={muted}
+          onPlay={() => this.setState({playing: true})}
+          onPause={() => this.setState({playing: false})}
+        />
 
         {
           menuHidden ? '' : 
-            <VideoMenu 
+            <VideoMenu
               onPlayButton={(value) => this.setState({playing: value})}
               onMuteButton={(value) => this.setState({muted: value})}
               onVolumeChange={(value) => this.setState({volume: value})}

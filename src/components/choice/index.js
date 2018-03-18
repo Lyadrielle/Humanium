@@ -14,7 +14,6 @@ class Qte extends Component {
   componentDidMount() {
     const { choices } = this.props
     document.getElementById('choice').focus()
-    console.log(choices)
   }
 
   onKeyPressed(event) {
