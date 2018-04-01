@@ -20,7 +20,7 @@
   {
     "id": "fight",
     "name": "Bataille pour le nutella",
-    "video": "battle",
+    "video": "fight",
     "type": "QTE",
     "qteType": "smash",
     "sequence": ["ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"],

@@ -50,9 +50,12 @@ class Qte extends Component {
   
   render() {
     const { timer, currentChoice } = this.state
-    const { choices } = this.props
+    const { choices, onComplete } = this.props
     const [firstChoice, secondChoice] = choices
     this.countDown()
+    if (!this.isTimerActive()) {
+      onComplete(currentChoice)
+    }
 
     return (
       <div

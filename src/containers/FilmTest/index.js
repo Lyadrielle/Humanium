@@ -32,8 +32,53 @@ class FilmTest extends Component {
     const video = document.createElement('video')
     video.src = api.generateVideoLink(currentScene.video)
     return video.ondurationchange = () => {
-      setTimeout(() => this.setState({ executeAction: true }), 1000 * (video.duration - (currentScene.time || 0)))
-      this.setState({ currentScene })
+      const totalVideoDuration = 1000 * (video.duration - (currentScene.time || 0))
+      const timeout = setTimeout(() => this.setState({ executeAction: true }), totalVideoDuration)
+      this.setState({
+        currentScene,
+        timeout,
+        totalVideoDuration,
+        startPayTime: (new Date()).getTime()
+      })
+    }
+  }
+
+  pause(state, setState) {
+    return () => {
+      const { startPayTime, totalVideoDuration, timeout } = state
+      clearTimeout(timeout)
+      const currentTime = (new Date()).getTime() - startPayTime
+      const remainingTime = totalVideoDuration - currentTime
+      setState({
+        remainingTime
+      })
+    }
+  }
+
+  play(state, setState) {
+    return () => {
+      const { remainingTime } = state
+      this.setState({
+        timeout: setTimeout(() => setState({ executeAction: true }), remainingTime)
+      })
+    }
+  }
+
+  choiceComplete(state, setState) {
+    return currentChoice => {
+      const { currentScene: { choices } } = state
+      const { next } = choices[currentChoice]
+      const context = localStorage.getItem('context')
+      api.post({
+        path: 'tree/move',
+        headers: { context },
+        body: { next }
+      }).then(({ success, newContext }) => {
+        if (success) {
+          localStorage.setItem('context', newContext)
+        }
+        window.location.reload()
+      })
     }
   }
 
@@ -48,22 +93,34 @@ class FilmTest extends Component {
     const actionMap = {
       Cinematic: () => null,
       QTE: () => null,
-      Choice: ({ choices, time }) => displayChoice(choices, time)
+      Choice: ({ choices, time }) => displayChoice(
+        choices,
+        time,
+        this.choiceComplete(this.state, (state) => this.setState(state))
+      )
     }
 
     return (
       <div className="page-film">
-        {video && displayVideoPlayer(video)}
+        {video && displayVideoPlayer(
+          video,
+          !executeAction,
+          this.pause(this.state, (state) => this.setState(state)),
+          this.play(this.state, (state) => this.setState(state))
+        )}
         {executeAction && actionMap[currentScene.type](currentScene)}
       </div>
     )
   }
 }
 
-function displayVideoPlayer(videoId) {
+function displayVideoPlayer(videoId, displayMenu, onPause, onPlay) {
   return (
     <VideoPlayer
       videoId={videoId}
+      displayMenu={displayMenu}
+      onPause={onPause}
+      onPlay={onPlay}
     />
   )
 }
@@ -78,11 +135,12 @@ function displayQTE() {
   )
 }
 
-function displayChoice(choices, time) {
+function displayChoice(choices, time, onComplete) {
   return (
     <Choice
       choices={choices}
       time={time}
+      onComplete={onComplete}
     />
   )
 }

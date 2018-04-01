@@ -30,7 +30,12 @@ class FilmTest extends Component {
       muted,
     } = this.state
 
-    const { videoId } = this.props
+    const {
+      videoId,
+      displayMenu,
+      onPause,
+      onPlay,
+    } = this.props
 
       return (
       <div className='film' onMouseMove = {
@@ -56,15 +61,19 @@ class FilmTest extends Component {
         />
 
         {
-          menuHidden ? '' : 
-            <VideoMenu
-              onPlayButton={(value) => this.setState({playing: value})}
-              onMuteButton={(value) => this.setState({muted: value})}
-              onVolumeChange={(value) => this.setState({volume: value})}
-              isPlaying={playing}
-              isMuted={muted}
-              volume={volume}
-            />
+          displayMenu && !menuHidden ?
+          <VideoMenu
+            onPlayButton={(value) => {
+              this.setState({playing: value})
+              if (onPause && !value) onPause()
+              if (onPlay && value) onPlay()
+            }}
+            onMuteButton={(value) => this.setState({muted: value})}
+            onVolumeChange={(value) => this.setState({volume: value})}
+            isPlaying={playing}
+            isMuted={muted}
+            volume={volume}
+          /> : ''
         }
       </div>
     )}
