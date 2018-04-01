@@ -9,7 +9,7 @@ document.oncontextmenu = function() {
   return false;
 }
 
-class FilmTest extends Component {
+class Film extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -79,4 +79,4 @@ class FilmTest extends Component {
     )}
 }
 
-export default FilmTest
+export default Film
