@@ -17,11 +17,19 @@
   "description": [
     {
     "id": "0",
-    "paragraph": "Humanium - Interactive short movie"
+    "paragraph": "\"In 2081, as cybernetic implants become standardised, you play the role of a young inspector who is getting into trouble, both physically and legally because of an incident with her bionic heart during the pursuit of a fugitive..."
     }, 
     {
       "id": "1",
-      "paragraph":"Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker."
-    } 
+      "paragraph":"However, this woman may hold the key to getting you out of trouble, if you manage to choose between revenge, duty and humanity...\""
+    },
+    {
+      "id": "2",
+      "paragraph":"Humanium is a project realized within the framework of the tutored projects of the engineering school IMAC 2017."
+    },
+    {
+      "id": "3",
+      "paragraph":"This is a project in collaboration with the audiovisual association 803Z"
+    }   
   ]
 }

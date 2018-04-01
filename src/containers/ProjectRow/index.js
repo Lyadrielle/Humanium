@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import TextContent from '../TextContent'
-import Image from '../../components/Image'
 import NoInteractionSlider from '../NoInteractionSlider'
 import './style.css'
 

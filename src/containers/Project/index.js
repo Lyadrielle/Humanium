@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
-import GlitchButton from '../../components/GlitchButton'
 import ProjectRow from '../ProjectRow'
+import ImageButton from '../../components/ImageButton'
 
 import './style.css'
 
@@ -18,10 +18,19 @@ class Project extends Component {
           images={images} 
           paragraphs={texts} 
         />
-         <a className="project-button-text" 
-          onClick={() => this.props.history.push('/team')}>
-            Team
-         </a>
+        <div className = "team-button">
+          <ImageButton 
+            className="team-image-button"
+
+            onClick={() => this.props.history.push('/team')}
+            src="./assets/images/logo.svg"
+            alt="logo humanium"
+          />
+          <a className="team-button-text" 
+            onClick={() => this.props.history.push('/team')}>
+              Team
+          </a>
+        </div>
       </div>
     )}
 }

@@ -2,6 +2,44 @@
     display:flex;
     flex-direction: column;
     color:white;
-    max-width: 20%;
+    max-width: 28%;
     align-items: center;
 }
+
+.role-text {
+    font-size: 10px;
+}
+
+.name-text {
+    font-size: 16px;
+}
+
+
+@media (min-width: 750px) {
+    .name-text {
+        font-size: 18px;
+    }
+    .role-text {
+        font-size: 12px;
+    }
+  }
+  
+  @media (min-width: 970px) {
+    .role-text {
+        font-size: 14px;
+    }
+    .name-text {
+        font-size: 22px;
+    }
+}
+  
+  @media (min-width: 1170px) {
+    .role-text {
+        font-size: 16px;
+    }
+    .name-text {
+        font-size: 26px;
+    }
+  }
+  
+  

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
-import GlitchButton from '../../components/GlitchButton'
 import MemberSheet from '../MemberSheet'
+import ImageButton from '../../components/ImageButton'
 
 import './style.css'
 
@@ -21,14 +21,23 @@ class Team extends Component {
           showStatus ={false}
           showIndicators={false}
           showThumbs={false}
-          width={"100%"}>
+          width={"100%"}
+          infiniteLoop={true}
+          >
             {memberCarouselFirst}
             {memberCarouselSecond}
         </Carousel>
-        
+        <div className = "project-button">
+          <ImageButton 
+            className = "project-image-button"
+            onClick={() => this.props.history.push('/project')}
+            src="./assets/images/logo.svg"
+            alt="logo humanium"
+          />
         <a className="project-button-text" onClick={() => this.props.history.push('/project')}>
           Project
         </a>
+        </div>
       </div>
     )}
 }

@@ -1,27 +1,47 @@
 .video-menu {
-    /* ========[ POSITION ]======= */
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    height: 35px;
-    bottom:0;
-    padding: 5px 0 5px 0;
-    margin: 0;
-    /* =========[ COLOR ]======== */
-    background-color: #151515;
-  }
+  /* ========[ POSITION ]======= */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 35px;
+  bottom: 0;
+  padding: 5px 0 5px 0;
+  margin: 0;
 
-  .left-buttons, .center-buttons, .right-buttons {
-    display:flex;
-    align-items: center;
-    height: 100%;
-  }
+  /* =========[ COLOR ]======== */
+  background-color: #070707;
 
-  .drop {
-    padding:0;
-    align-self: flex-end;
-    background-color: #151515;
-    text-align: center;
-  }
+  /* =========[ OTHER ]========= */
+  opacity: 1;
+
+  /* =========[ ANIMATION ]========= */
+  transition: height 500ms 0ms, opacity 500ms 150ms;
+}
+
+.hide-video-menu {
+  /* ========[ POSITION ]======= */
+  height: 0px;
+
+  /* =========[ ANIMATION ]========= */
+  transition: height 500ms 100ms, opacity 500ms 0ms;
+
+  /* =========[ OTHER ]========= */
+  opacity: 0.0;
+}
+
+.left-buttons,
+.center-buttons,
+.right-buttons {
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+
+.drop {
+  padding: 0;
+  align-self: flex-end;
+  background-color: #070707;
+  text-align: center;
+}

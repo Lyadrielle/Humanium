@@ -14,4 +14,18 @@
 
   /* =========[ OTHER ]========= */
   overflow: hidden;
+  opacity: 1;
+
+  /* =========[ ANIMATION ]========= */
+  transition: opacity 500ms 100ms;
+}
+
+.hide-menu {
+  /* ========[ POSITION ]======= */
+
+  /* =========[ ANIMATION ]========= */
+  transition: opacity 500ms 0ms;
+
+  /* =========[ OTHER ]========= */
+  opacity: 0.0;
 }

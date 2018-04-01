@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 import Menu from './containers/Menu'
 import Home from './containers/Home'
@@ -11,11 +11,22 @@ import PageQTE from './containers/pageQTE'
 import PageChoice from './containers/pageChoice'
 
 class App extends Component {
-  render() {
+  constructor (props) {
+    super(props)
+    this.state = {
+      'showMenu': true,
+      'keepVisible': false
+    }
+  }
+
+  render () {
     return (
       <Router>
         <div className="app">
-          <Menu/>
+          <Menu
+            show={this.state.showMenu}
+            keepVisible={(value) => this.setState({ 'keepVisible': value })}
+          />
           <Route path="/" exact component={Home} />
           <Route path="/film" exact component={Film} />
           <Route path="/filmtest" exact component={FilmTest} />
@@ -25,7 +36,8 @@ class App extends Component {
           <Route path="/choice" exact component={PageChoice} />
         </div>
       </Router>
-    )}
+    )
+  }
 }
 
 export default App

@@ -9,11 +9,10 @@ class NoInteractionSlider extends Component {
     render() {
       const images = this.props.images
       const listItems = images.map((item) =>
-              <div>
+              <div key={item.alt}>
                 <Image
                 src={item.src} 
-                alt={item.alt}
-                key={item.alt} 
+                alt={item.alt} 
                 />
               </div>
           )
@@ -27,7 +26,8 @@ class NoInteractionSlider extends Component {
                 showThumbs={false}
                 infiniteLoop={true}
                 autoPlay={true}
-                width={"100%"}>
+                width={"100%"}
+                interval={3000}>
                 {listItems}
             </Carousel>
         </div>
