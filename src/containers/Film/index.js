@@ -17,7 +17,7 @@ class Film extends Component {
     const retryLoadContext = () => setTimeout(this.loadContext, 1000)
     let context = localStorage.getItem('context')
     if (!context) {
-      const { success, newContext, currentNode } = await api.get({ path: 'tree/init' })
+      const { success, newContext } = await api.get({ path: 'tree/init' })
       if (!success) return retryLoadContext()
       localStorage.setItem('context', newContext)
       context = newContext
@@ -29,6 +29,7 @@ class Film extends Component {
     }
 
     const currentScene = nodes[nodes.length - 1]
+    console.log(currentScene)
     const video = document.createElement('video')
     video.src = api.generateVideoLink(currentScene.video)
     return video.ondurationchange = () => {
@@ -64,21 +65,33 @@ class Film extends Component {
     }
   }
 
-  choiceComplete(state, setState) {
+  nextScene(next) {
+    const context = localStorage.getItem('context')
+    api.post({
+      path: 'tree/move',
+      headers: { context },
+      body: { next }
+    }).then(({ success, newContext }) => {
+      if (success) {
+        localStorage.setItem('context', newContext)
+      }
+      window.location.reload()
+    })
+  }
+
+  choiceComplete(state) {
     return currentChoice => {
       const { currentScene: { choices } } = state
       const { next } = choices[currentChoice]
-      const context = localStorage.getItem('context')
-      api.post({
-        path: 'tree/move',
-        headers: { context },
-        body: { next }
-      }).then(({ success, newContext }) => {
-        if (success) {
-          localStorage.setItem('context', newContext)
-        }
-        window.location.reload()
-      })
+      this.nextScene(next)
+    }
+  }
+
+  QTEComplete(state) {
+    return success => {
+      const { currentScene } = state
+      const next = success ? currentScene.success : currentScene.failure
+      this.nextScene(next)
     }
   }
 
@@ -91,12 +104,19 @@ class Film extends Component {
     const { video } = currentScene || {}
 
     const actionMap = {
-      Cinematic: () => null,
-      QTE: () => null,
+      Cinematic: () => {
+        const { currentScene: { next } } = this.state
+        if (next) this.nextScene(next)
+      },
+      QTE: ({ qteType, sequence }) => displayQTE(
+        qteType,
+        sequence,
+        this.QTEComplete(this.state)
+      ),
       Choice: ({ choices, time }) => displayChoice(
         choices,
         time,
-        this.choiceComplete(this.state, (state) => this.setState(state))
+        this.choiceComplete(this.state)
       )
     }
 
@@ -125,12 +145,13 @@ function displayVideoPlayer(videoId, displayMenu, onPause, onPlay) {
   )
 }
 
-function displayQTE() {
+function displayQTE(qteType, sequence, onComplete) {
   return (
     <Qte
-      sequence={['ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight']}
-      qteType="sequence"
+      sequence={sequence}
+      qteType={qteType}
       time={5}
+      onComplete={onComplete}
     />
   )
 }

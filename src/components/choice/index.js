@@ -7,8 +7,7 @@ class Qte extends Component {
     super(props)
     this.state = {
       timer: props.time,
-      currentChoice: 0,
-      //batteryImg: 'battery_01.png'
+      currentChoice: 0
     }
   }
 
@@ -99,22 +98,6 @@ function Answer({ text, position, selected }) {
           fontSize: `${selected ? 30 : 25}px`
         }}
       >
-        {text}
-      </div>
-    </div>
-  )
-}
-
-function Answer({ text, position, selected }) {
-  return (
-    <div
-      className="answer"
-      style={{
-        left: `${position * 50}%`,
-        backgroundColor: `rgba(73, 84, 247, ${selected ? 0.4 : 0.2})`
-      }}
-    >
-      <div className="answer-text">
         {text}
       </div>
     </div>
