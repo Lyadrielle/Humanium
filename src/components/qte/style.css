@@ -6,7 +6,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
+  position: absolute;
+  outline: none;
 }
 
 .key-container {
@@ -36,7 +37,6 @@
   display:flex;
   align-items: center;
   justify-content: center;
-  background-color:black;
   width: 100%;
   height: 100%;
 }

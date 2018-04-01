@@ -10,6 +10,7 @@ class Qte extends Component {
       timer: props.time,
       outcome: 'pending',
       nextKey: props.sequence[0],
+      currentIndex: 0,
       keySuccess: null,
       captureKey: true,
     }
@@ -21,29 +22,33 @@ class Qte extends Component {
 
   onKeyPressed(event) {
     event.persist()
-    const { sequence, qteType } = this.props
+    const { sequence, qteType, onComplete } = this.props
+    const { currentIndex, outcome, captureKey, nextKey } = this.state
 
-    if (this.state.outcome !== 'pending' || !this.state.captureKey) return
+    if (outcome !== 'pending' || !captureKey) return
 
     this.setState({ captureKey: false })
 
-    if (event.key !== this.state.nextKey && qteType !== 'smash') {
+    if (event.key !== nextKey && qteType !== 'smash') {
       this.setState(state => ({
+        currentIndex: 0,
         nextKey: sequence[0],
         keySuccess: 'failure'
       }))
     }
 
-    if (event.key === this.state.nextKey) {
-      const newIndex = sequence.indexOf(this.state.nextKey) + 1
+    if (event.key === nextKey) {
+      const newIndex = currentIndex + 1
 
       if (newIndex === sequence.length) {
         this.setState(state => ({
           outcome: 'success',
         }))
+        if (onComplete) onComplete(true)
       } else {
         this.setState(state => ({
           nextKey: sequence[newIndex],
+          currentIndex: newIndex,
           keySuccess: 'success'
         }))
       }
@@ -56,16 +61,18 @@ class Qte extends Component {
   }
 
   countDown() {
-    const { outcome, timer } = this.state
-    const isTimerActive = timer && outcome !== 'success'
+    const { onComplete } = this.props
+    const { timer } = this.state
 
     setTimeout(() => {
       if (this.isTimerActive()) {
         const newTimer = timer - 1
-        console.log(newTimer)
         if (newTimer) {
           this.countDown()
           return this.setState({ timer: newTimer })
+        }
+        if (onComplete) {
+          setTimeout(() => onComplete(false), 750)
         }
         return this.setState({
           outcome: 'failure',
@@ -77,7 +84,6 @@ class Qte extends Component {
 
   render() {
     const { nextKey, outcome, timer, keySuccess } = this.state
-    const style = 'pending-qte'
     this.countDown()
 
     return (
@@ -92,7 +98,7 @@ class Qte extends Component {
           onKeyUp={() => this.setState({ keySuccess: null, captureKey: true })}
           tabIndex="1"
         > 
-          {outcome === 'pending' ? <div className="key-container"><Key className={this.state.nextKey} /></div> : <p className = "pending-qte">{outcome}</p>}
+          {outcome === 'pending' ? <div className="key-container"><Key className={nextKey} /></div> : <p className = "pending-qte">{outcome}</p>}
           {keySuccess === 'success' && (<p className = "pending-qte">OK !</p>)}
           {keySuccess === 'failure' && (<p className = "pending-qte-error">ERROR</p>)}
         </div>
