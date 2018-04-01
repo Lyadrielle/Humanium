@@ -1,15 +1,16 @@
 
 .project-row {
-/* ========[ POSITION ]======= */
-  display:flex;
-  justify-content: center;
-  align-items: center;
-/* =========[ FONTS ]========= */
-
-/* =========[ COLOR ]========= */
-
- 
-/* =========[ OTHER ]========= */
-max-height: 100%;
-/* =======[ ANIMATION ]======= */
-}
+  /* ========[ POSITION ]======= */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:15%;
+  /* =========[ FONTS ]========= */
+  
+  /* =========[ COLOR ]========= */
+  
+   
+  /* =========[ OTHER ]========= */
+  max-height: 100%;
+  /* =======[ ANIMATION ]======= */
+  }
