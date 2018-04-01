@@ -99,7 +99,7 @@ class VideoMenu extends Component {
                   this.setState(prevState => ({playing : !prevState.playing}))
                   this.props.onPlayButton(!this.state.playing)
                   }}
-                src={this.state.playing ?  './assets/images/pause.png' : './assets/images/play.png'} 
+                src={this.state.playing ?  './assets/images/pause.svg' : './assets/images/play.svg'} 
                 className="play-button"
                 style={{height:"50%"}}
               />
@@ -108,7 +108,7 @@ class VideoMenu extends Component {
                   this.setState(prevState => ({mute : !prevState.mute}))
                   this.props.onMuteButton(!this.state.mute)
                   }}
-                src={this.state.mute || this.state.volume === 0?  './assets/images/speaker_04.png' : './assets/images/speaker_01.png'} //Todo : function to handle image with soundLevel
+                src={this.state.mute || this.state.volume === 0?  './assets/images/speaker_01.svg' : './assets/images/speaker_04.svg'} //Todo : function to handle image with soundLevel
                 className="sound-button"
                 style={{height:"50%"}}
               />
@@ -119,15 +119,6 @@ class VideoMenu extends Component {
                   this.props.onVolumeChange(value)  
                 }}
               />
-          </div>
-
-          <div className="center-buttons">
-            <ImageButton 
-                  onClick = {() => console.log("You skiped the video")}
-                  src = './assets/images/skip.png'
-                  className = "skip-button"
-                  style={{height:"50%"}}
-                />
           </div>
 
           <div className="right-buttons">
@@ -186,7 +177,7 @@ class VideoMenu extends Component {
                       this.goFullscreen()
                     }
                   }
-                  src = {this.state.fullScreen ?  './assets/images/windowed.png' : './assets/images/fullscreen.png'}
+                  src = {this.state.fullScreen ?  './assets/images/windowed.svg' : './assets/images/fullscreen.svg'}
                   className = "screen-button"
                   style={{height:"50%"}}
                 />
