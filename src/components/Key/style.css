@@ -1,0 +1,28 @@
+.ArrowDown, .ArrowUp, .ArrowLeft, .ArrowRight {
+    width: 120px;
+    height: 100px;   
+    background-repeat: no-repeat;
+    -webkit-animation: animGuy 0.7s steps(2) infinite;
+    background-size: cover;
+    margin:auto;
+  }
+
+  .ArrowDown {
+    background-image: url('/assets/images/sprite_sheet_Down.svg');
+  }
+  .ArrowUp {
+    background-image: url('/assets/images/sprite_sheet_Up.svg');
+  }
+  .ArrowLeft {
+    background-image: url('/assets/images/sprite_sheet_Left.svg');
+  }
+  .ArrowRight {
+    background-image: url('/assets/images/sprite_sheet_Right.svg');
+  }   
+  
+  @-webkit-keyframes animGuy {
+     0%{ background-position-x:0 ; }
+     100% { background-position-x: -259px ; }
+  }
+  
+   

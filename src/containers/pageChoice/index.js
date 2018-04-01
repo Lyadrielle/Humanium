@@ -19,7 +19,7 @@ const choices = [
 class PageChoice extends Component {
   render() {
     return (
-      <div className="page-qte">
+      <div className="page-Choice">
         <Choice
           choices={choices}
           time={10}

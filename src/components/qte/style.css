@@ -1,16 +1,86 @@
 .qte {
   width: 350px;
   height: 250px;
-  background-color: orange;
   text-align: center;
-  position: absolute;
-  top: calc(50% - 125px);
-  left: calc(50% - 175px);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
 }
 
-.pending-qte {
+.key-container {
+  animation: fadein 0.3s;
+    -moz-animation: fadein 0.3s; /* Firefox */
+    -webkit-animation: fadein 0.3s; /* Safari and Chrome */
+    -o-animation: fadein 0.3s; /* Opera */
+}
+
+.pending-qte, .pending-qte-error {
   font-family: 'Roboto+Condensed', 'Roboto', 'arial';
   font-variant: small-caps;
   font-size: 50px;
   font-weight: 800;
+  animation: fadein 0.3s;
+    -moz-animation: fadein 0.3s; /* Firefox */
+    -webkit-animation: fadein 0.3s; /* Safari and Chrome */
+    -o-animation: fadein 0.3s; /* Opera */
+}
+.pending-qte-error {
+  color:red;
+}
+.pending-qte {
+  color: white;
+}
+.qte-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color:black;
+  width: 100%;
+  height: 100%;
+}
+
+.timer-qte {
+  position: absolute;
+  top: 7%;
+  left: 1%;
+  width: 100%;
+}
+
+.keyContainer{
+  display: flex;
+}
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
 }

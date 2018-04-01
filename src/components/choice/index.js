@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
 import './style.css'
+import BatteryCounter from '../batteryCounter';
 
 class Qte extends Component {
   constructor(props) {
@@ -8,6 +8,7 @@ class Qte extends Component {
     this.state = {
       timer: props.time,
       currentChoice: 0,
+      //batteryImg: 'battery_01.png'
     }
   }
 
@@ -42,12 +43,15 @@ class Qte extends Component {
           return this.setState({ timer: newTimer })
         }
         return this.setState({
-          timer: 0,
+          timer: 0
         })
       }
     }, 1000)
   }
-  
+
+
+
+
   render() {
     const { timer, currentChoice } = this.state
     const { choices, onComplete } = this.props
@@ -74,10 +78,34 @@ class Qte extends Component {
           position={1}
           selected={currentChoice === 1}
         />
-        { timer && (<div className="timer">{ this.state.timer }</div>) }
+        {timer && (<div className="timer-choice">
+          <BatteryCounter timeInit = {this.props.time} timer= {this.state.timer} />
+        </div>)}
       </div>
     )
-  } 
+  }
+}
+
+function Answer({ text, position, selected }) {
+  return (
+    <div
+      className="answer"
+      style={{
+        left: `${position * 50}%`,
+        backgroundColor: `rgba(0, 0, 0, ${selected ? 0.2 : 0.4})`
+      }}
+    >
+      <div
+        className="answer-text"
+        style={{
+          color: `rgba(255, 255, 255, ${selected ? 1 : 0.3})`,
+          fontSize: `${selected ? 30 : 25}px`
+        }}
+      >
+        {text}
+      </div>
+    </div>
+  )
 }
 
 function Answer({ text, position, selected }) {
