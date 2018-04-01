@@ -14,19 +14,20 @@
         "next": "fight"
       }
     ],
-    "timer": "10",
-    "defaultChoice": "0"
+    "time": 10
   },
 
   {
     "id": "fight",
     "name": "Bataille pour le nutella",
-    "video": "battle",
+    "video": "fight",
     "type": "QTE",
+    "qteType": "smash",
+    "sequence": ["ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"],
     "success": "toast",
     "failure": "depression",
-    "timer": "5",
-    "defaultOutcome": "0"
+    "time": 5,
+    "defaultOutcome": 0
   },
 
   {
