@@ -29,7 +29,6 @@ class Film extends Component {
     }
 
     const currentScene = nodes[nodes.length - 1]
-    console.log(currentScene)
     const video = document.createElement('video')
     video.src = api.generateVideoLink(currentScene.video)
     return video.ondurationchange = () => {

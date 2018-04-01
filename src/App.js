@@ -22,10 +22,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
-          <Menu
-            show={this.state.showMenu}
-            keepVisible={(value) => this.setState({ 'keepVisible': value })}
-          />
+          <Menu/>
           <Route path="/" exact component={Home} />
           <Route path="/film" exact component={Film} />
           <Route path="/project" exact component={Project} />
