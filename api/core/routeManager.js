@@ -13,7 +13,7 @@ const routesFolder = path.resolve(__dirname, '../routes')
 loadAllRoutes()
 
 function addRoute(type, route, handler) {
-  router[type.toLowerCase()](`/api${route.replace('\\', '/')}`, (req, res, next) => {
+  router[type.toLowerCase()](`/api${route.replace('\n', '/n').replace('\t', '/t').replace('\\', '/')}`, (req, res, next) => {
     handler(req).then(result => {
       const { mimeType, name, buffer, stream } = result
       if (mimeType && name && (buffer || stream)) {
