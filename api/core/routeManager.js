@@ -4,6 +4,35 @@ const path = require('path')
 
 const logger = require('./logger')
 
+const windowsFixUrl = [
+	['\\a', '/a'],
+	['\\b', '/b'],
+	['\\c', '/c'],
+	['\\d', '/d'],
+	['\\e', '/e'],
+	['\\f', '/f'],
+	['\\g', '/g'],
+	['\\h', '/h'],
+	['\\i', '/i'],
+	['\\j', '/j'],
+	['\\k', '/k'],
+	['\\l', '/l'],
+	['\\m', '/m'],
+	['\\n', '/n'],
+	['\\o', '/o'],
+	['\\p', '/p'],
+	['\\q', '/q'],
+	['\\r', '/r'],
+	['\\s', '/s'],
+	['\\t', '/t'],
+	['\\u', '/u'],
+	['\\v', '/v'],
+	['\\w', '/w'],
+	['\\x', '/x'],
+	['\\y', '/y'],
+	['\\z', '/z']
+]
+
 const router = express()
 module.exports = {
   router,
@@ -13,7 +42,11 @@ const routesFolder = path.resolve(__dirname, '../routes')
 loadAllRoutes()
 
 function addRoute(type, route, handler) {
-  router[type.toLowerCase()](`/api${route.replace('\n', '/n').replace('\t', '/t').replace('\\', '/')}`, (req, res, next) => {
+  const routePath = windowsFixUrl.reduce(
+    (acc, [element, replace]) => acc.replace(element, replace),
+    `/api${route.replace('\\', '/')}`
+  )
+  router[type.toLowerCase()](routePath, (req, res, next) => {
     handler(req).then(result => {
       const { mimeType, name, buffer, stream } = result
       if (mimeType && name && (buffer || stream)) {
