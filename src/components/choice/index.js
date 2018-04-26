@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import './style.css'
+
 import BatteryCounter from '../batteryCounter';
+
+import './style.css'
 
 class Qte extends Component {
   constructor(props) {
