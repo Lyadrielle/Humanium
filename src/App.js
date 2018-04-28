@@ -8,7 +8,7 @@ import Project from './containers/Project'
 import Team from './containers/Team'
 import PageQTE from './containers/pageQTE'
 import PageChoice from './containers/pageChoice'
-
+import TreeContainer from './containers/TreeContainer'
 class App extends Component {
   constructor (props) {
     super(props)
@@ -29,6 +29,8 @@ class App extends Component {
           <Route path="/team" exact component={Team} />
           <Route path="/qte" exact component={PageQTE} />
           <Route path="/choice" exact component={PageChoice} />
+          <Route path="/tree" exact component={TreeContainer} />
+
         </div>
       </Router>
     )

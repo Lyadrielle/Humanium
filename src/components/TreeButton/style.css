@@ -1,0 +1,22 @@
+.losange {
+    height: 7px;
+    width: 7px;
+
+}
+
+.losange:hover {
+    background: white;
+}
+
+.border {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 10px;
+    width: 10px;
+    border: solid white;
+    -ms-transform: rotate(45deg); /* Internet Explorer */
+    -moz-transform: rotate(45deg); /* Firefox */
+    -webkit-transform: rotate(45deg); /* Safari et Chrome */
+    -o-transform: rotate(45deg); /* Opera */
+}
