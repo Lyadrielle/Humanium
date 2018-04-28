@@ -4,7 +4,7 @@ import BatteryCounter from '../batteryCounter';
 
 import './style.css'
 
-class Qte extends Component {
+class Choice extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -106,4 +106,4 @@ function Answer({ text, position, selected }) {
   )
 }
 
-export default Qte
+export default Choice
