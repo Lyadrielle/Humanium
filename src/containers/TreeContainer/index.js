@@ -6,6 +6,11 @@ import TreeButton from '../../components/TreeButton'
 import './style.css'
 
 class TreeContainer extends Component {
+  constructor(props){
+    super(props)
+    this.backToContext = this.backToContext.bind(this)
+  }
+
   state = {
     nodes: null,
   }
@@ -39,6 +44,25 @@ class TreeContainer extends Component {
     this.loadContext()
   }
 
+  backToContext(i) {
+    console.log("backtocontext index :" + i)
+    this.state.nodes.splice(i+1)
+    let newNodes = this.state.nodes 
+    console.log(newNodes)
+    this.setState({nodes:newNodes})
+    const next = this.state.nodes[i].id
+    const context = localStorage.getItem('context')
+    api.post({
+      path: 'tree/move',
+      headers: { context },
+      body: { next }
+    }).then(({ success, newContext }) => {
+      if (success) {
+        localStorage.setItem('context', newContext)
+      }
+    })
+  }
+
   render() {
     console.log(this.state.nodes)
 
@@ -47,7 +71,17 @@ class TreeContainer extends Component {
         {this.state && this.state.nodes &&
           this.state.nodes.map((answer, i) => {
             console.log("Entered");
-            return (<TreeButton key={i} />)
+            if (i != this.state.nodes.length - 1) {
+              return (<div className="tree-components">
+                <TreeButton index={i} onNodeSelect={this.backToContext} key={i} />
+                <div className="line"></div>
+              </div>)
+            }
+            else {
+              return (<div className="tree-components">
+                <TreeButton index={this.state.nodes.length - 1} onNodeSelect={this.backToContext} key={this.state.nodes.length - 1} />
+              </div>)
+            }
           })}
       </div>
     )

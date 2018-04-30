@@ -17,3 +17,16 @@
   /* =======[ ANIMATION ]======= */
   
 }
+
+.line{
+  height:2px;
+  width:150px;
+  background-color: white;
+}
+
+.tree-components {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}

@@ -5,7 +5,9 @@ import './style.css'
 class TreeButton extends Component {
   render() {
     return (
-      <div className = "border">
+      <div className = "border" onClick = {()=>{
+        this.props.onNodeSelect(this.props.index)
+      }}>
         <div className="losange"></div>
       </div>
     )}
