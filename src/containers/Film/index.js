@@ -73,8 +73,9 @@ class Film extends Component {
     }).then(({ success, newContext }) => {
       if (success) {
         localStorage.setItem('context', newContext)
+        this.setState({ executeAction: false, currentScene: null })
+        this.loadContext()
       }
-      window.location.reload()
     })
   }
 
