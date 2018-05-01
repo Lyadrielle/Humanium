@@ -73,13 +73,13 @@ class TreeContainer extends Component {
             console.log("Entered");
             if (i != this.state.nodes.length - 1) {
               return (<div className="tree-components">
-                <TreeButton index={i} onNodeSelect={this.backToContext} key={i} />
+                <TreeButton nodeId={this.state.nodes[i].id} index={i} onNodeSelect={this.backToContext} key={i} />
                 <div className="line"></div>
               </div>)
             }
             else {
               return (<div className="tree-components">
-                <TreeButton index={this.state.nodes.length - 1} onNodeSelect={this.backToContext} key={this.state.nodes.length - 1} />
+                <TreeButton nodeId={this.state.nodes[i].id} index={this.state.nodes.length - 1} onNodeSelect={this.backToContext} key={this.state.nodes.length - 1} />
               </div>)
             }
           })}
