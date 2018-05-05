@@ -11,7 +11,7 @@ module.exports = {
 
 async function handler(req) {
   const { query: { id } } = req
-  const { videoLink } = choiceTree.find(currentNode => currentNode.id === id)
+  const { videoLink } = choiceTree.find(currentNode => currentNode.video === id)
   const videoName = `${id}.mp4`
   const stream = videoLink
     ? request(videoLink)
