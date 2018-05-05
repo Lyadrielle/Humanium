@@ -31,6 +31,7 @@
     "start-api": "nodemon api/app.js",
     "start-front": "react-scripts start",
     "build-front": "react-scripts build",
+    "start-prod": "PRODENV=true node index.js",
     "test-front": "react-scripts test --env=jsdom",
     "eject-front": "react-scripts eject"
   },

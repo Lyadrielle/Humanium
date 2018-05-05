@@ -33,5 +33,9 @@ app.use((req, res, next) => {
 
 app.use(router)
 
-app.listen($env.API_PORT)
-logger.log('normal', `Humanium server started on port ${$env.API_PORT} !`)
+if ($env.PRODENV === 'true') {
+  module.exports = { app, logger }
+} else {
+  app.listen($env.API_PORT)
+  logger.log('normal', `Humanium server started on port ${$env.API_PORT} !`)
+}
