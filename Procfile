@@ -1,3 +1,1 @@
-web: npm install
-web: npm run build-front
-web: npm run start-prod
+web: npm install; npm run build-front; npm run start-prod
