@@ -3,6 +3,7 @@
     "id": "intro",
     "name": "Gaelle want to use the Nutella",
     "video": "intro",
+    "videoLink": "https://drive.google.com/uc?id=1LxFuaXrpgGT5fLCmAoPVw7gKYKDVzKqW&export=download",
     "type": "Choice",
     "choices": [
       {
@@ -21,6 +22,7 @@
     "id": "fight",
     "name": "Bataille pour le nutella",
     "video": "fight",
+    "videoLink": "https://drive.google.com/uc?id=1tJcdq2XVxOl9CmnFneJg-8isKKR5tIVo&export=download",
     "type": "QTE",
     "qteType": "smash",
     "sequence": ["ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"],
@@ -34,6 +36,7 @@
     "id": "toast",
     "name": "Gaelle make a nutella toast",
     "video": "toast",
+    "videoLink": "https://drive.google.com/uc?id=1go7CjbTR_QSspws96pcVdxzRev7JKolW&export=download",
     "type": "Cinematic",
     "next": "end02"
   },
@@ -42,6 +45,7 @@
     "id": "depression",
     "name": "Gaelle is depressed",
     "video": "depression",
+    "videoLink": "https://drive.google.com/uc?id=1IzJyCr0N7S3XEB5o1M0Lmi5wLLoy46Ch&export=download",
     "type": "Cinematic",
     "next": "end02"
   },
@@ -50,6 +54,7 @@
     "id": "end01",
     "name": "Gaelle resist the temptation",
     "video": "end01",
+    "videoLink": "https://drive.google.com/uc?id=1fUN4WbXaP-nLGWV3bSTKCnWvCbpblyf_&export=download",
     "type": "Cinematic",
     "next": null
   },
@@ -58,6 +63,7 @@
     "id": "end02",
     "name": "Gaelle return to work",
     "video": "end02",
+    "videoLink": "https://drive.google.com/uc?id=1FTFmIs6JGs-U2WMfTFQAAMPC2O_CCnEU&export=download",
     "type": "Cinematic",
     "next": null
   }

@@ -1,6 +1,6 @@
 const { encrypt } = require('aes256')
 
-const choiceTree = require('../../ressources/ChoiceTreeStupid.json')
+const { choiceTree } = require('../../core/tree')
 const { updateContext } = require('../../core/context')
 
 module.exports = {
