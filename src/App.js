@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, BrowserRouter as Router } from 'react-router-dom'
+import 'rodal/lib/rodal.css'
 
 import Menu from './containers/Menu'
 import Home from './containers/Home'

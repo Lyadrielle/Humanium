@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
 
 import api from '../../common/api'
 import TreeButton from '../../components/TreeButton'
+import '../TreeModal/style.css'
 import './style.css'
+import treeConfirm from '../../common/treeConfirm'
 
 class TreeContainer extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.backToContext = this.backToContext.bind(this)
-  }
-
-  state = {
-    nodes: null,
+    this.showModal = this.showModal.bind(this)
+    this.state = { showModal: false, nodes: null }
   }
 
   async loadContext() {
@@ -44,13 +44,20 @@ class TreeContainer extends Component {
     this.loadContext()
   }
 
-  backToContext(i) {
-    console.log("backtocontext index :" + i)
-    this.state.nodes.splice(i+1)
-    let newNodes = this.state.nodes 
-    console.log(newNodes)
-    this.setState({nodes:newNodes})
-    const next = this.state.nodes[i].id
+  showModal(index) {
+    const currentNode = this.state.nodes[index]
+    treeConfirm('', currentNode).then(
+      (result) => {
+        this.backToContext(currentNode)
+      },
+      (result) => {
+      }
+    )
+  }
+
+  backToContext(node) {
+    const { history } = this.props
+    const next = node.id
     const context = localStorage.getItem('context')
     api.post({
       path: 'tree/move',
@@ -59,6 +66,7 @@ class TreeContainer extends Component {
     }).then(({ success, newContext }) => {
       if (success) {
         localStorage.setItem('context', newContext)
+        history.push('/Film')
       }
     })
   }
@@ -71,15 +79,15 @@ class TreeContainer extends Component {
         {this.state && this.state.nodes &&
           this.state.nodes.map((answer, i) => {
             console.log("Entered");
-            if (i != this.state.nodes.length - 1) {
+            if (i !== this.state.nodes.length - 1) {
               return (<div className="tree-components">
-                <TreeButton nodeId={this.state.nodes[i].id} index={i} onNodeSelect={this.backToContext} key={i} />
+                <TreeButton node={this.state.nodes[i]} index={i} onNodeSelect={this.showModal} key={i} />
                 <div className="line"></div>
               </div>)
             }
             else {
               return (<div className="tree-components">
-                <TreeButton nodeId={this.state.nodes[i].id} index={this.state.nodes.length - 1} onNodeSelect={this.backToContext} key={this.state.nodes.length - 1} />
+                <TreeButton node={this.state.nodes[i]} index={this.state.nodes.length - 1} onNodeSelect={this.showModal} key={this.state.nodes.length - 1} />
               </div>)
             }
           })}

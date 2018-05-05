@@ -4,11 +4,6 @@
     position: fixed;
 }
 
-.losange:hover {
-    background: white;
-    cursor: pointer;
-}
-
 .node-name {
     color: white;
     position: relative;
@@ -31,4 +26,13 @@
     -moz-transform: rotate(45deg); /* Firefox */
     -webkit-transform: rotate(45deg); /* Safari et Chrome */
     -o-transform: rotate(45deg); /* Opera */
+}
+
+.border:hover {
+    cursor: pointer;
+}
+
+.border:hover .losange {
+    background: white;
+    cursor: pointer;
 }
