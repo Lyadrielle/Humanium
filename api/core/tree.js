@@ -1,3 +1,3 @@
-const choiceTree = require('../ressources/ChoiceTreeStupid.json')
+const choiceTree = require('../ressources/ChoiceTreeTrailer.json')
 
 module.exports = { choiceTree }
