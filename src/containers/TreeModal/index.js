@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { confirmable } from 'react-confirm';
 import Rodal from 'rodal'
 
+import './style.css'
+
 class TreeModal extends Component {
     render() {
         const { show, proceed, dismiss, cancel, confirmation, options } = this.props

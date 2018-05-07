@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom'
 
 import api from '../../common/api'
 import TreeButton from '../../components/TreeButton'
-import '../TreeModal/style.css'
 import './style.css'
 import treeConfirm from '../../common/treeConfirm'
 
