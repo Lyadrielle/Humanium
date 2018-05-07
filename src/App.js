@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { isMobile } from 'react-device-detect';
 import 'rodal/lib/rodal.css'
 
 import Menu from './containers/Menu'
@@ -10,8 +11,9 @@ import Team from './containers/Team'
 import PageQTE from './containers/pageQTE'
 import PageChoice from './containers/pageChoice'
 import TreeContainer from './containers/TreeContainer'
+import MobileGuard from './containers/MobileGuard';
 class App extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       'showMenu': true,
@@ -19,11 +21,18 @@ class App extends Component {
     }
   }
 
-  render () {
+  renderApp = () => {
+    if (isMobile) {
+      return (
+        <div className="app">
+          <MobileGuard/>
+        </div>
+      )
+    }
     return (
       <Router>
         <div className="app">
-          <Menu/>
+          <Menu />
           <Route path="/" exact component={Home} />
           <Route path="/film" exact component={Film} />
           <Route path="/project" exact component={Project} />
@@ -35,6 +44,10 @@ class App extends Component {
         </div>
       </Router>
     )
+  }
+
+  render() {
+    return this.renderApp();
   }
 }
 
