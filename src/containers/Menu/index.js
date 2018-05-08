@@ -27,7 +27,7 @@ class Menu extends Component {
       >
         <GlitchButton
           text="Film"
-          onClick={() => history.push('/Film')}
+          onClick={() => history.push('/Intro')}
           style = {{margin:0, fontSize:"16px"}}
         />
         <ImageButton 
