@@ -10,11 +10,16 @@ class TreeModal extends Component {
         const { show, proceed, dismiss, cancel, confirmation, options } = this.props
         return (
             <Rodal visible={show} onClose={() => cancel()} closeMaskOnClick={false} animation="zoom" duration={200}>
-                <div className="header">Reprendre la lecture</div>
+                <div className="header">
+                    <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium"/>
+                    Reprendre la lecture
+                </div>
                 <div className="body">
                 Vous êtes sur le point de vous rendre au point suivant de l'histoire : <br></br>
+                <p>
                 Nom : {options.id} <br></br>
                 Description : {options.name}
+                </p>
                 <p>Confirmez-vous ce choix ?</p>
                 </div>
                 <button className="rodal-confirm-btn" onClick={() => proceed()}>Confirmer</button>

@@ -70,26 +70,33 @@ class TreeContainer extends Component {
     })
   }
 
-  render() {
-    console.log(this.state.nodes)
+  displayTreeNodes() {
+    const nodes = this.state.nodes.filter((node, i) => {
+      return (node.visibleOnTree != false)
+    })
+    
+    return (
+      nodes.map((node, i) => {
+        console.log("Entered");
+        if (i !== nodes.length - 1) {
+          return (<div key={i} className="tree-components">
+            <TreeButton node={nodes[i]} index={i} onNodeSelect={this.showModal} />
+            <div className="line"></div>
+          </div>)
+        }
+        else {
+          return (<div key={nodes.length - 1} className="tree-components">
+            <TreeButton node={nodes[i]} index={nodes.length - 1} onNodeSelect={this.showModal} />
+          </div>)
+        }
+      })
+    )
+  }
 
+  render() {
     return (
       <div className="tree-container">
-        {this.state && this.state.nodes &&
-          this.state.nodes.map((answer, i) => {
-            console.log("Entered");
-            if (i !== this.state.nodes.length - 1) {
-              return (<div className="tree-components">
-                <TreeButton node={this.state.nodes[i]} index={i} onNodeSelect={this.showModal} key={i} />
-                <div className="line"></div>
-              </div>)
-            }
-            else {
-              return (<div className="tree-components">
-                <TreeButton node={this.state.nodes[i]} index={this.state.nodes.length - 1} onNodeSelect={this.showModal} key={this.state.nodes.length - 1} />
-              </div>)
-            }
-          })}
+        {this.state && this.state.nodes && this.displayTreeNodes()}
       </div>
     )
   }
