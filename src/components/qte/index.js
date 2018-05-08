@@ -14,10 +14,12 @@ class Qte extends Component {
       keySuccess: null,
       captureKey: true,
     }
+    this.timeout = null
   }
 
   componentDidMount() {
     document.getElementById('QTE').focus()
+    this.countDown()
   }
 
   onKeyPressed(event) {
@@ -64,15 +66,15 @@ class Qte extends Component {
     const { onComplete } = this.props
     const { timer } = this.state
 
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
       if (this.isTimerActive()) {
         const newTimer = timer - 1
         if (newTimer) {
-          this.countDown()
-          return this.setState({ timer: newTimer })
+          this.setState({ timer: newTimer })
+          return this.countDown()
         }
         if (onComplete) {
-          setTimeout(() => onComplete(false), 750)
+          this.timeout = setTimeout(() => onComplete(false), 750)
         }
         return this.setState({
           outcome: 'failure',
@@ -82,9 +84,12 @@ class Qte extends Component {
     }, 1000)
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.timeout)
+  }
+
   render() {
     const { nextKey, outcome, timer, keySuccess } = this.state
-    this.countDown()
 
     return (
       <div className = "qte-container">

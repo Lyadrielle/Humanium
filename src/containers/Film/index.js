@@ -8,9 +8,13 @@ import api from '../../common/api'
 import './style.css'
 
 class Film extends Component {
-  state = {
-    currentScene: null,
-    executeAction: false,
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentScene: null,
+      executeAction: false,
+    }
   }
 
   async loadContext() {
@@ -97,6 +101,11 @@ class Film extends Component {
 
   componentDidMount() {
     this.loadContext()
+  }
+
+  componentWillUnmount() {
+    const timeout = this.state.timeout
+    clearTimeout(timeout)
   }
 
   render() {

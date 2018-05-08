@@ -20,6 +20,11 @@ class VideoPlayer extends Component {
       muted: false,
     }
   }
+
+  componentWillUnmount() {
+    const {videoTimeout} = this.state
+    clearTimeout(videoTimeout)
+  }
   
   render() {
     const {
