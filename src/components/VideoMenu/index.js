@@ -77,7 +77,7 @@ class VideoMenu extends Component {
   }
 
   goFullscreen() {
-    let element = document.getElementById("root")
+    let element = document.body
     if (fscreen.fullscreenElement !== null) {
       fscreen.exitFullscreen();
     } else {
