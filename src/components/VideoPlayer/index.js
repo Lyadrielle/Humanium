@@ -31,7 +31,7 @@ class Film extends Component {
     } = this.state
 
     const {
-      videoId,
+      videoLink,
       displayMenu,
       onPause,
       onPlay,
@@ -50,7 +50,7 @@ class Film extends Component {
           })
       }}>
         <ReactPlayer
-          url={api.generateVideoLink(videoId)}
+          url={videoLink}
           width='100%'
           height='100%'
           playing={playing}

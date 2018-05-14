@@ -30,11 +30,14 @@ class Film extends Component {
 
     const currentScene = nodes[nodes.length - 1]
     const video = document.createElement('video')
-    video.src = api.generateVideoLink(currentScene.video)
+    const videoLink = currentScene.videoLink || api.generateVideoLink(currentScene.video)
+    console.log(videoLink)
+    video.src = videoLink
     return video.ondurationchange = () => {
       const totalVideoDuration = 1000 * (video.duration - (currentScene.time || 0))
       const timeout = setTimeout(() => this.setState({ executeAction: true }), totalVideoDuration)
       this.setState({
+        videoLink,
         currentScene,
         timeout,
         totalVideoDuration,
@@ -99,7 +102,7 @@ class Film extends Component {
   }
 
   render() {
-    const { currentScene, executeAction } = this.state
+    const { currentScene, executeAction, videoLink } = this.state
     const { video } = currentScene || {}
 
     const actionMap = {
@@ -122,7 +125,7 @@ class Film extends Component {
     return (
       <div className="page-film">
         {video && displayVideoPlayer(
-          video,
+          videoLink,
           !executeAction,
           this.pause(this.state, (state) => this.setState(state)),
           this.play(this.state, (state) => this.setState(state))
@@ -133,10 +136,10 @@ class Film extends Component {
   }
 }
 
-function displayVideoPlayer(videoId, displayMenu, onPause, onPlay) {
+function displayVideoPlayer(videoLink, displayMenu, onPause, onPlay) {
   return (
     <VideoPlayer
-      videoId={videoId}
+      videoLink={videoLink}
       displayMenu={displayMenu}
       onPause={onPause}
       onPlay={onPlay}
