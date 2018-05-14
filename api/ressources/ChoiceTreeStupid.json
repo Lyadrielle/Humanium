@@ -15,7 +15,7 @@
         "next": "fight"
       }
     ],
-    "time": 10
+    "time": 13
   },
 
   {
@@ -24,6 +24,7 @@
     "video": "fight",
     "videoLink": "https://drive.google.com/uc?id=1tJcdq2XVxOl9CmnFneJg-8isKKR5tIVo&export=download",
     "type": "QTE",
+    "visibleOnTree": false,
     "qteType": "smash",
     "sequence": ["ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"],
     "success": "toast",

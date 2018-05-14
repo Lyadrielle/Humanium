@@ -9,7 +9,7 @@ document.oncontextmenu = function() {
   return false;
 }
 
-class Film extends Component {
+class VideoPlayer extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -19,6 +19,11 @@ class Film extends Component {
       volume: 0.8,
       muted: false,
     }
+  }
+
+  componentWillUnmount() {
+    const {videoTimeout} = this.state
+    clearTimeout(videoTimeout)
   }
   
   render() {
@@ -79,4 +84,4 @@ class Film extends Component {
     )}
 }
 
-export default Film
+export default VideoPlayer

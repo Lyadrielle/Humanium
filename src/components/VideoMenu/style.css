@@ -10,7 +10,7 @@
     padding: 5px 0 5px 0;
     margin: 0;
     /* =========[ COLOR ]======== */
-    background-color: #151515;
+    background-color: #070707;
   }
 
   .left-buttons, .center-buttons, .right-buttons {
@@ -22,6 +22,6 @@
   .drop {
     padding:0;
     align-self: flex-end;
-    background-color: #151515;
+    background-color: #070707;
     text-align: center;
   }

@@ -23,7 +23,7 @@ class Footer extends Component {
   }
 
   goFullscreen () {
-    const element = document.getElementById('root')
+    const element = document.body
 
     if (fscreen.fullscreenElement !== null) {
       fscreen.exitFullscreen()

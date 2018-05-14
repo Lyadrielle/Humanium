@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
-import './style.css'
+
 import BatteryCounter from '../batteryCounter';
 
-class Qte extends Component {
+import './style.css'
+
+class Choice extends Component {
   constructor(props) {
     super(props)
     this.state = {
       timer: props.time,
       currentChoice: 0
     }
+    this.timeout = null
   }
 
   componentDidMount() {
     const { choices } = this.props
     document.getElementById('choice').focus()
+    this.countDown()
   }
 
   onKeyPressed(event) {
@@ -33,13 +37,12 @@ class Qte extends Component {
 
   countDown() {
     const { timer } = this.state
-
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
       if (this.isTimerActive()) {
         const newTimer = timer - 1
         if (newTimer) {
-          this.countDown()
-          return this.setState({ timer: newTimer })
+          this.setState({ timer: newTimer })
+          return this.countDown()
         }
         return this.setState({
           timer: 0
@@ -48,11 +51,15 @@ class Qte extends Component {
     }, 1000)
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.timeout)
+  }
+
   render() {
     const { timer, currentChoice } = this.state
     const { choices, onComplete } = this.props
     const [firstChoice, secondChoice] = choices
-    this.countDown()
+    
     if (!this.isTimerActive() && onComplete) {
       onComplete(currentChoice)
     }
@@ -104,4 +111,4 @@ function Answer({ text, position, selected }) {
   )
 }
 
-export default Qte
+export default Choice
