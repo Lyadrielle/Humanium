@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './style.css'
 import ImageButton from '../../components/ImageButton';
 
+const messages = {
+    mobile: "L'experience Humanium est concue pour être visionnée sur ordinateur !",
+    orientation: "Veuillez passez votre appareil en mode paysage !"
+}
 class MobileGuard extends Component {
     render() {
         return (
@@ -14,11 +18,13 @@ class MobileGuard extends Component {
                     />
                 </div>
                 <div className="row">
-                    <p>L'experience Humanium est concue pour être visionnée sur ordinateur !</p>
+                    <p>{this.props.message}</p>
                 </div>
             </div>
         );
     }
 }
+
+MobileGuard.messages = messages
 
 export default MobileGuard;

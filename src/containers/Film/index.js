@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 import VideoPlayer from '../../components/VideoPlayer'
 import Qte from '../../components/qte'
 import Choice from '../../components/choice'
+import MobileGuard from '../MobileGuard'
 import api from '../../common/api'
+import { isMobile } from 'react-device-detect';
 
 import './style.css'
 
@@ -103,7 +105,9 @@ class Film extends Component {
   }
 
   componentDidMount() {
-    this.loadContext()
+    if (!isMobile) {
+      this.loadContext() 
+    }
   }
 
   componentWillUnmount() {
@@ -129,6 +133,14 @@ class Film extends Component {
         choices,
         time,
         this.choiceComplete(this.state)
+      )
+    }
+
+    if (isMobile) {
+      return (
+        <div className="app">
+          <MobileGuard message={MobileGuard.messages.mobile}/>
+        </div>
       )
     }
 

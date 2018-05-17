@@ -1,32 +1,51 @@
-import React, { Component } from 'react'
-import { Route, BrowserRouter as Router } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import 'rodal/lib/rodal.css';
 import { isMobile } from 'react-device-detect';
-import 'rodal/lib/rodal.css'
 
-import Menu from './containers/Menu'
-import Home from './containers/Home'
-import MenuFilm from './containers/MenuFilm'
-import Film from './containers/Film'
-import Project from './containers/Project'
-import Team from './containers/Team'
-import PageQTE from './containers/pageQTE'
-import PageChoice from './containers/pageChoice'
-import TreeContainer from './containers/TreeContainer'
-import MobileGuard from './containers/MobileGuard';
+import Menu from './containers/Menu';
+import Home from './containers/Home';
+import MenuFilm from './containers/MenuFilm';
+import Film from './containers/Film';
+import Project from './containers/Project';
+import Team from './containers/Team';
+import PageQTE from './containers/pageQTE';
+import PageChoice from './containers/pageChoice';
+import TreeContainer from './containers/TreeContainer';
+import MobileGuard from './containers/MobileGuard'
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      'showMenu': true,
-      'keepVisible': false
-    }
+      showMenu: true,
+      keepVisible: false,
+      isLandscape: false
+    };
+  }
+
+  orientationChangeHandler = () => {
+    var isLandscape = window.screen.orientation.type.startsWith('landscape');
+    this.setState({isLandscape: isLandscape})
+  };
+
+  initOrientation = () => {
+    this.orientationChangeHandler()
+
+    window.screen.orientation.addEventListener(
+      'change',
+      this.orientationChangeHandler
+    );
+  };
+
+  componentDidMount() {
+    this.initOrientation()
   }
 
   renderApp = () => {
-    if (isMobile) {
+    if (isMobile && !this.state.isLandscape) {
       return (
         <div className="app">
-          <MobileGuard/>
+          <MobileGuard message={MobileGuard.messages.orientation}/>
         </div>
       )
     }
@@ -42,15 +61,14 @@ class App extends Component {
           <Route path="/qte" exact component={PageQTE} />
           <Route path="/choice" exact component={PageChoice} />
           <Route path="/tree" exact component={TreeContainer} />
-
         </div>
       </Router>
-    )
-  }
+    );
+  };
 
   render() {
     return this.renderApp();
   }
 }
 
-export default App
+export default App;
