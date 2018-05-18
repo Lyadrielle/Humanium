@@ -1,225 +1,147 @@
-{
-  "choiceTree": [
-    {
-      "id": "street-fight-eve",
-      "name": "Street fight between Liza and Eve",
-      "video": "0-01_street_fight_eve",
-      "videoLink": "",
-      "type": "Cinematic",
-      "next": "hospital-awakening"
-    },
+[
+  {
+    "id": "0-01_streetFightHospitalWakeUp",
+    "name": "After a fight, Liza wake up at the hospital",
+    "video": "streetFightHospitalWakeUp",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/streetFightHospitalWakeUp.mp4",
+    "type": "Choice",
+    "choices": [
+      {
+        "text": "Hocher la tête",
+        "next": "A0-02_hospitalAnswer"
+      },
+      {
+        "text": "Rester immobile",
+        "next": "B0-02_hospitalAnswer"
+      }
+    ],
+    "time": 5,
+    "defaultChoice": "1"
+  },
 
-    {
-      "id": "hospital-awakening",
-      "name": "Liza wake up at the hospital",
-      "video": "0-02_hospital_awakening",
-      "videoLink": "",
-      "type": "Choice",
-      "choices": [
-        {
-          "text": "Hocher la tête",
-          "next": "hospital-question"
-        },
-        {
-          "text": "rester stoïck",
-          "next": "hospital-question"
-        }
-      ],
-      "timer": "10",
-      "defaultChoice": "1"
-    },
+  {
+    "id": "A0-02_hospitalAnswer",
+    "name": "Liza nods to the doctor",
+    "video": "hospitalAnswer_nod",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_nod.mp4",
+    "type": "Cinematic",
+    "next": "0-03_hospitalQuestion"
+  },
 
-    {
-      "id": "hospital-question",
-      "name": "The Doctor checks Liza's brain functions",
-      "video": "0-03_hospital_question",
-      "videoLink": "",
-      "type": "Choice",
-      "choices": [
-        {
-          "text": "dire 4",
-          "next": "hospital-action"
-        },
-        {
-          "text": "...",
-          "next": "hospital-action"
-        }
-      ],
-      "timer": "10",
-      "defaultChoice": "1"
-    },
+  {
+    "id": "B0-02_hospitalAnswer",
+    "name": "Liza stays immobile",
+    "video": "hospitalAnswer_noNod",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_noNod.mp4",
+    "type": "Cinematic",
+    "next": "0-03_hospitalQuestion"
+  },
 
-    {
-      "id": "hospital-action",
-      "name": "The Doctor checks Liza's body functions",
-      "video": "0-04_hospital_action",
-      "videoLink": "",
-      "type": "QTE",
-      "qteType": "smash",
-      "sequence": ["ArrowUp", "ArrowUp"],
-      "success": "hospital-discussion",
-      "failure": "hospital-discussion",
-      "timer": "5",
-      "defaultOutcome": "failure"
-    },
+  {
+    "id": "0-03_hospitalQuestion",
+    "name": "The Doctor checks Liza's body & brain functions",
+    "video": "hospitalQuestion",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalQuestion.mp4",
+    "type": "QTE",
+    "qteType": "sequence",
+    "sequence": ["ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"],
+    "success": "A0-04_hospitalAnswer",
+    "failure": "B0-04_hospitalAnswer",
+    "time": 5,
+    "defaultOutcome": "failure"
+  },
 
-    {
-      "id": "hospital-discussion",
-      "name": "The Doctor scold Liza on her behavior",
-      "video": "0-05_hospital_discussion",
-      "videoLink": "",
-      "type": "Cinematic",
-      "next": "malo-encounter"
-    },
+  {
+    "id": "A0-04_hospitalAnswer",
+    "name": "Liza says 4",
+    "video": "hospitalAnswer_four",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_four.mp4",
+    "type": "Cinematic",
+    "next": "0-05_hospitalScold"
+  },
 
-    {
-      "id": "malo-encounter",
-      "name": "Liza come across Malo breaking in Eva's place",
-      "video": "0-06_malo-encounter",
-      "videoLink": "",
-      "type": "Choice",
-      "choices": [
-        {
-          "text": "Le laisser partir",
-          "next": "let-malo-go"
-        },
-        {
-          "text": "L'arrêter",
-          "next": "arrest-malo"
-        }
-      ],
-      "timer": "10",
-      "defaultChoice": "0"
-    },
+  {
+    "id": "B0-04_hospitalAnswer",
+    "name": "Liza says nothing",
+    "video": "hospitalAnswer_noFour",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_noFour.mp4",
+    "type": "Cinematic",
+    "next": "0-05_hospitalScold"
+  },
 
-    {
-      "id": "let-malo-go",
-      "name": "Liza let Malo go away",
-      "video": "0-07-1_let-malo-go",
-      "videoLink": "",
-      "type": "Cinematic",
-      "next": "street-search"
-    },
+  {
+    "id": "0-05_hospitalScold",
+    "name": "The doctor scold Liza for her recklesness",
+    "video": "hospitalScold",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalScold.mp4",
+    "type": "Cinematic",
+    "next": "0-06_maloEncounter"
+  },
 
-    {
-      "id": "arrest-malo",
-      "name": "Liza shot and arrested Malo",
-      "video": "0-07-2_arrest-malo",
-      "videoLink": "",
-      "type": "Cinematic",
-      "next": "street-search"
-    },
+  {
+    "id": "0-06_maloEncounter",
+    "name": "Liza find malo breaking in Eve's place",
+    "video": "maloEncounter",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/maloEncounter.mp4",
+    "type": "Choice",
+    "choices": [
+      {
+        "text": "Let him go",
+        "next": "1-01_letMaloGo"
+      },
+      {
+        "text": "Arrest him now",
+        "next": "2-01_arrestMalo"
+      }
+    ],
+    "time": 5,
+    "defaultChoice": "1"
+  },
 
-    {
-      "id": "street-search",
-      "name": "With the documents stolen from Eve's place Liza search the QG",
-      "video": "0-08_street_search",
-      "videoLink": "",
-      "type": "Cinematic",
-      "next": "street-mentor"
-    },
+  {
+    "id": "1-01_letMaloGo",
+    "name": "Liza lets Malo run away",
+    "video": "letMaloGo",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/letMaloGo.mp4",
+    "type": "Cinematic",
+    "next": "1-02_streetSection"
+  },
 
-    {
-      "id": "street-mentor",
-      "name": "On the bring of despair Liza encounter an inspiring old lady",
-      "video": "0-09_street_mentor",
-      "videoLink": "",
-      "type": "Cinematic",
-      "next": "alois-encounter"
-    },
+  {
+    "id": "2-01_ArrestMalo",
+    "name": "Liza arrests Malo on the spot",
+    "video": "arrestMalo",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/arrestMalo.mp4",
+    "type": "Cinematic",
+    "next": null
+  },
 
-    {
-      "id": "alois-encounter",
-      "name": "Upon a looming breackdown Liza meets alois",
-      "video": "0-10_alois_encounter",
-      "videoLink": "",
-      "type": "Choice",
-      "choices": [
-        {
-          "text": "Lui parler des implants",
-          "next": "alois-discussion-v1"
-        },
-        {
-          "text": "Se taire",
-          "next": "alois-discussion-v2"
-        }
-      ],
-      "timer": "10",
-      "defaultChoice": "1"
-    },
+  {
+    "id": "1-02_StreetSection",
+    "name": "Liza search the streets to find the group's HQ. She start panicing and encounter someone",
+    "video": "streetSection",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": null
+  },
 
-    {
-      "id": "alois-discussion-v1",
-      "name": "Liza keep talking not mentioning her condition",
-      "video": "1-01_alois-discussion",
-      "videoLink": "",
-      "type": "Cinematic",
-      "next": "big-sister-chase-c1"
-    },
-
-    {
-      "id": "alois-discussion-v2",
-      "name": "After explaining her condition to Aloïs, Liza keep talking",
-      "video": "2-01_alois-discussion",
-      "videoLink": "",
-      "type": "Cinematic",
-      "next": "big-sister-chase-c2"
-    },
-
-    {
-      "id": "big-sister-chase-c1",
-      "name": "Liza pursue Eve and they engage in a fight",
-      "video": "0-11_big_sister_chase",
-      "videoLink": "",
-      "type": "QTE",
-      "qteType": "smash",
-      "sequence": ["ArrowLeft", "ArrowLeft"],
-      "success": "big-sister-fight-s1-f0",
-      "failure": "big-sister-fight-s0-f1",
-      "timer": "5",
-      "defaultOutcome": "failure"
-    },
-
-    {
-      "id": "big-sister-fight-s1-f0",
-      "name": "Eve struggle to disarm Liza. She shase Eve again and they fight.",
-      "video": "1-01_big_sister_fight",
-      "videoLink": "",
-      "type": "QTE",
-      "qteType": "sequence",
-      "sequence": ["ArrowLeft", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowRight"],
-      "success": "big-sister-fight-s2-f0",
-      "failure": "big-sister-fight-s1-f1",
-      "timer": "5",
-      "defaultOutcome": "failure"
-    },
-
-    {
-      "id": "big-sister-fight-s2-f0",
-      "name": "Liza Punch Eve in the stomach.",
-      "video": "1-02_big_sister_fight",
-      "videoLink": "",
-      "type": "QTE",
-      "qteType": "smash",
-      "sequence": ["ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"],
-      "success": "big-sister-fight-s1-f1",
-      "failure": "big-sister-fight-s0-f2",
-      "timer": "5",
-      "defaultOutcome": "failure"
-    },
-
-    {
-      "id": "big-sister-fight-s0-f1",
-      "name": "Eve disarm Liza without strugle. Liza shase Eve again and they fight.",
-      "video": "2-01_big_sister_fight",
-      "videoLink": "",
-      "type": "QTE",
-      "qteType": "sequence",
-      "sequence": ["ArrowLeft", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowRight"],
-      "success": "big-sister-fight-s1-f1",
-      "failure": "big-sister-fight-s0-f2",
-      "timer": "5",
-      "defaultOutcome": "failure"
-    }
-  ]
-}
+  {
+    "id": "1-03_aloisEncounter",
+    "name": "Liza finally find the base. She then encounter Alois roaming arround.",
+    "video": "aloisEncounter",
+    "videoLink": "https://.mp4",
+    "type": "Choice",
+    "choices": [
+      {
+        "text": "tell him",
+        "next": null
+      },
+      {
+        "text": "stay quiet",
+        "next": null
+      }
+    ],
+    "timer": "10",
+    "defaultChoice": "1"
+  }
+]
