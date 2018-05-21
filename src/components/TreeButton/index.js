@@ -10,7 +10,7 @@ class TreeButton extends Component {
         <div data-tip={this.props.node.name} className="border" onClick={() => {
           this.props.onNodeSelect(this.props.index)
         }}>
-          <div className="node-name">{this.props.node.id}</div>
+          <div className="node-name">{this.props.node.title}</div>
           <div className="losange"></div>
         </div>
         <ReactTooltip place="bottom" effect="solid"/>

@@ -2,6 +2,8 @@
   {
     "id": "0-01_streetFightHospitalWakeUp",
     "name": "After a fight, Liza wake up at the hospital",
+    "title": "Chapter 0",
+    "visibleOnTree" : true,
     "video": "streetFightHospitalWakeUp",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/streetFightHospitalWakeUp.mp4",
     "type": "Choice",
@@ -21,6 +23,8 @@
 
   {
     "id": "A0-02_hospitalAnswer",
+    "title": "Chapter 0 - Choice",
+    "visibleOnTree" : false,
     "name": "Liza nods to the doctor",
     "video": "hospitalAnswer_nod",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_nod.mp4",
@@ -30,6 +34,8 @@
 
   {
     "id": "B0-02_hospitalAnswer",
+    "title": "Chapter 0 - Choice",
+    "visibleOnTree" : false,
     "name": "Liza stays immobile",
     "video": "hospitalAnswer_noNod",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_noNod.mp4",
@@ -40,6 +46,8 @@
   {
     "id": "0-03_hospitalQuestion",
     "name": "The Doctor checks Liza's body & brain functions",
+    "title": "Chapter 0 - QTE",
+    "visibleOnTree" : false,
     "video": "hospitalQuestion",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalQuestion.mp4",
     "type": "QTE",
@@ -54,6 +62,8 @@
   {
     "id": "A0-04_hospitalAnswer",
     "name": "Liza says 4",
+    "title": "Chapter 0 - QTE Answer",
+    "visibleOnTree" : false,
     "video": "hospitalAnswer_four",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_four.mp4",
     "type": "Cinematic",
@@ -63,6 +73,8 @@
   {
     "id": "B0-04_hospitalAnswer",
     "name": "Liza says nothing",
+    "title": "Chapter 0 - QTE Answer",
+    "visibleOnTree" : false,
     "video": "hospitalAnswer_noFour",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_noFour.mp4",
     "type": "Cinematic",
@@ -72,6 +84,8 @@
   {
     "id": "0-05_hospitalScold",
     "name": "The doctor scold Liza for her recklesness",
+    "title": "Chapter 1",
+    "visibleOnTree" : true,
     "video": "hospitalScold",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalScold.mp4",
     "type": "Cinematic",
@@ -81,6 +95,8 @@
   {
     "id": "0-06_maloEncounter",
     "name": "Liza find malo breaking in Eve's place",
+    "title": "Chapter 1",
+    "visibleOnTree" : true,
     "video": "maloEncounter",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/maloEncounter.mp4",
     "type": "Choice",
@@ -101,6 +117,8 @@
   {
     "id": "1-01_letMaloGo",
     "name": "Liza lets Malo run away",
+    "title": "Chapter 2",
+    "visibleOnTree" : true,
     "video": "letMaloGo",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/letMaloGo.mp4",
     "type": "Cinematic",
@@ -110,6 +128,8 @@
   {
     "id": "2-01_ArrestMalo",
     "name": "Liza arrests Malo on the spot",
+    "title": "Chapter 2",
+    "visibleOnTree" : true,
     "video": "arrestMalo",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/arrestMalo.mp4",
     "type": "Cinematic",
@@ -119,6 +139,8 @@
   {
     "id": "1-02_StreetSection",
     "name": "Liza search the streets to find the group's HQ. She start panicing and encounter someone",
+    "title": "Chapter 4",
+    "visibleOnTree" : true,
     "video": "streetSection",
     "videoLink": "https://.mp4",
     "type": "Cinematic",
@@ -128,6 +150,8 @@
   {
     "id": "1-03_aloisEncounter",
     "name": "Liza finally find the base. She then encounter Alois roaming arround.",
+    "title": "Chapter 4 - Choice",
+    "visibleOnTree" : false,
     "video": "aloisEncounter",
     "videoLink": "https://.mp4",
     "type": "Choice",
