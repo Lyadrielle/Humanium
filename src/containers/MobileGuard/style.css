@@ -17,8 +17,9 @@
   
   .row {
     width: auto;
+    text-align: center;
   }
 
   .logo{
-    width:50%;
+    width:50px;
   }
