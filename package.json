@@ -25,7 +25,8 @@
     "react-tooltip": "^3.5.1",
     "redux": "3.7.2",
     "rodal": "^1.6.3",
-    "slick-carousel": "1.8.1"
+    "slick-carousel": "1.8.1",
+    "sqlite3": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "4.16.0",
