@@ -8,7 +8,7 @@ class TreeButton extends Component {
     return (
       <div>
         <div data-tip={this.props.node.name} className="border" onClick={() => {
-          this.props.onNodeSelect(this.props.index)
+          this.props.onNodeSelect(this.props.node)
         }}>
           <div className="node-name">{this.props.node.title}</div>
           <div className="losange"></div>
