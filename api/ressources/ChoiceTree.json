@@ -83,19 +83,11 @@
   },
 
   {
-<<<<<<< 1d9ddd43f22fdf0e73a75ece48a3bcf057914661
-    "id": "0-06_maloEncounter",
-    "name": "Liza find malo breaking in Eve's place",
-    "title": "Chapter 1",
-    "visibleOnTree" : false,
-    "video": "maloEncounter",
-=======
     "id": "0-06_rencontreAvecMalo",
     "visibleOnTree" : true,
     "name": "",
     "title": "Chapitre",
     "video": "rencontreAvecMalo",
->>>>>>> SQLITE logique
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/maloEncounter.mp4",
     "type": "Choice",
     "choices": [
@@ -131,19 +123,11 @@
   },
 
   {
-<<<<<<< 1d9ddd43f22fdf0e73a75ece48a3bcf057914661
-    "id": "1-02_StreetSection",
-    "name": "Liza search the streets to find the group's HQ. She start panicing and encounter someone",
-    "title": "Chapter 4",
-    "visibleOnTree" : false,
-    "video": "streetSection",
-=======
     "id": "1-02_dansLaRue",
     "visibleOnTree" : true,
     "name": "",
     "title": "Chapitre",
     "video": "dansLaRue",
->>>>>>> SQLITE logique
     "videoLink": "https://.mp4",
     "type": "Cinematic",
     "next": "1-03_rencontreAvecAlois"
