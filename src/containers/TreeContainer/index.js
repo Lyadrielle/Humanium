@@ -43,12 +43,8 @@ class TreeContainer extends Component {
     this.loadContext()
   }
 
-  showModal(index) {
-    const nodes = this.state.nodes.filter((node, i) => {
-      return (node.visibleOnTree != false)
-    })
-    
-    const currentNode = nodes[index]
+  showModal(node) {
+    const currentNode = node
     treeConfirm('', currentNode).then(
       (result) => {
         this.backToContext(currentNode)
@@ -84,13 +80,13 @@ class TreeContainer extends Component {
         console.log("Entered");
         if (i !== nodes.length - 1) {
           return (<div key={i} className="tree-components">
-            <TreeButton node={nodes[i]} index={i} onNodeSelect={this.showModal} />
+            <TreeButton node={nodes[i]} onNodeSelect={this.showModal} />
             <div className="line"></div>
           </div>)
         }
         else {
           return (<div key={nodes.length - 1} className="tree-components">
-            <TreeButton node={nodes[i]} index={nodes.length - 1} onNodeSelect={this.showModal} />
+            <TreeButton node={nodes[i]} onNodeSelect={this.showModal} />
           </div>)
         }
       })
