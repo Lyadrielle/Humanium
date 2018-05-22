@@ -15,9 +15,12 @@ class TreeModal extends Component {
                     Reprendre la lecture
                 </div>
                 <div className="body">
-                Vous êtes sur le point de vous rendre au point suivant de l'histoire : <br></br>
+                Vous êtes sur le point de vous rendre au moment suivant de l'histoire : <br></br>
+                
+                <img className="thumbnail" src={"./assets/images/tree/" + options.video + ".jpg"} alt = "thumbnail"/>
+                
                 <p>
-                Nom : {options.id} <br></br>
+                Nom : {options.title} <br></br>
                 Description : {options.name}
                 </p>
                 <p>Confirmez-vous ce choix ?</p>

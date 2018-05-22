@@ -44,7 +44,11 @@ class TreeContainer extends Component {
   }
 
   showModal(index) {
-    const currentNode = this.state.nodes[index]
+    const nodes = this.state.nodes.filter((node, i) => {
+      return (node.visibleOnTree != false)
+    })
+    
+    const currentNode = nodes[index]
     treeConfirm('', currentNode).then(
       (result) => {
         this.backToContext(currentNode)

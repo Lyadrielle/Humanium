@@ -1,40 +1,75 @@
 .losange {
-    height: 7px;
-    width: 7px;
-    position: fixed;
+  height: 4px;
+  width: 4px;
+  position: fixed;
 }
 
 .node-name {
-    color: white;
-    position: relative;
-    -ms-transform: rotate(-45deg); /* Internet Explorer */
-    -moz-transform: rotate(-45deg); /* Firefox */
-    -webkit-transform: rotate(-45deg); /* Safari et Chrome */
-    -o-transform: rotate(-45deg); /* Opera */
-    top: -20px;
-    left: -20px;
-    text-align: center;
-    min-width: 95px;
+  color: white;
+  position: relative;
+  -ms-transform: rotate(-45deg); /* Internet Explorer */
+  -moz-transform: rotate(-45deg); /* Firefox */
+  -webkit-transform: rotate(-45deg); /* Safari et Chrome */
+  -o-transform: rotate(-45deg); /* Opera */
+  top: -20px;
+  left: -20px;
+  text-align: center;
+  min-width: 95px;
+  font-size: 9px;
 }
 
 .border {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 10px;
-    width: 10px;
-    border: solid white;
-    -ms-transform: rotate(45deg); /* Internet Explorer */
-    -moz-transform: rotate(45deg); /* Firefox */
-    -webkit-transform: rotate(45deg); /* Safari et Chrome */
-    -o-transform: rotate(45deg); /* Opera */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 7px;
+  width: 7px;
+  border: solid white;
+  -ms-transform: rotate(45deg); /* Internet Explorer */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -webkit-transform: rotate(45deg); /* Safari et Chrome */
+  -o-transform: rotate(45deg); /* Opera */
 }
 
 .border:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .border:hover .losange {
-    background: white;
-    cursor: pointer;
+  background: white;
+  cursor: pointer;
+}
+
+
+
+@media (min-width: 576px) {    
+  .node-name {
+      font-size: 9px;
+  }
+}
+
+@media (min-width: 768px) { 
+  .node-name {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 992px) { 
+  .node-name {
+    font-size: 12px;
+  }
+
+  .losange {
+    height: 7px;
+    width: 7px;
+  }
+  
+  .border {
+    height: 10px;
+    width: 10px;
+  }
+}
+
+@media (min-width: 1200px) { 
+
 }
