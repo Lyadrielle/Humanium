@@ -5,7 +5,7 @@
     "name": "",
     "title": "Chapitre",
     "video": "reveil",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/streetFightHospitalWakeUp.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/streetFighthopitalWakeUp.mp4",
     "type": "Choice",
     "choices": [
       {
@@ -25,7 +25,7 @@
     "id": "A0-02_hopitalHocherTete",
     "visibleOnTree" : false,
     "video": "hopitalHocherTete",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_nod.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalAnswer_nod.mp4",
     "type": "Cinematic",
     "next": "0-03_hopitalQuestion"
   },
@@ -34,7 +34,7 @@
     "id": "B0-02_hopitalImmobile",
     "visibleOnTree" : false,
     "video": "hopitalImmobile",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_noNod.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalAnswer_noNod.mp4",
     "type": "Cinematic",
     "next": "0-03_hopitalQuestion"
   },
@@ -45,7 +45,7 @@
     "name": "",
     "title": "Chapitre",
     "video": "hopitalQuestion",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalQuestion.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalQuestion.mp4",
     "type": "QTE",
     "qteType": "sequence",
     "sequence": ["ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"],
@@ -59,24 +59,24 @@
     "id": "A0-04_hopitalQatre",
     "visibleOnTree" : false,
     "video": "hopitalQatre",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_four.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalAnswer_four.mp4",
     "type": "Cinematic",
-    "next": "0-05_hospitalSermon"
+    "next": "0-05_hopitalSermon"
   },
 
   {
     "id": "B0-04_hopitalMuette",
     "visibleOnTree" : false,
-    "video": "hospitalAnswer_noFour",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_noFour.mp4",
+    "video": "hopitalAnswer_noFour",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalAnswer_noFour.mp4",
     "type": "Cinematic",
     "next": "0-05_hospitalSermon"
   },
 
   {
-    "id": "0-05_hospitalSermon",
+    "id": "0-05_hopitalSermon",
     "visibleOnTree" : false,
-    "video": "hospitalSermon",
+    "video": "hopitalSermon",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalScold.mp4",
     "type": "Cinematic",
     "next": "0-06_rencontreAvecMalo"
