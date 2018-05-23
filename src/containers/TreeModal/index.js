@@ -5,41 +5,48 @@ import Rodal from 'rodal'
 
 import './style.css'
 
+
+
 class TreeModal extends Component {
-    render() {
-        const { show, proceed, dismiss, cancel, confirmation, options } = this.props
-        return (
-            <Rodal visible={show} onClose={() => cancel()} closeMaskOnClick={false} animation="zoom" duration={200}>
-                <div className="header">
-                    <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium"/>
-                    Reprendre la lecture
-                </div>
-                <div className="body">
-                Vous êtes sur le point de vous rendre au moment suivant de l'histoire : <br></br>
-                
-                <img className="thumbnail" src={"./assets/images/tree/" + options.video + ".jpg"} alt = "thumbnail"/>
-                
-                <p>
-                Nom : {options.title} <br></br>
-                Description : {options.name}
-                </p>
-                <p>Confirmez-vous ce choix ?</p>
-                </div>
-                <button className="rodal-confirm-btn" onClick={() => proceed()}>Confirmer</button>
-                <button className="rodal-cancel-btn" onClick={() => cancel()}>Annuler</button>
-                <span className="rodal-close"></span>
-            </Rodal>
-        )
-    }
+  getCamelCaseArray = (camel) => {
+    const result = camel.replace(/([A-Z])/g, " $1")
+    return result.charAt(0).toUpperCase() + result.slice(1)
+  }
+
+  render() {
+    const { show, proceed, dismiss, cancel, confirmation, options } = this.props
+    return (
+      <Rodal visible={show} onClose={() => cancel()} closeMaskOnClick={false} animation="zoom" duration={200}>
+        <div className="header">
+          <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
+          Reprendre la lecture
+</div>
+        <div className="body">
+          Vous êtes sur le point de vous rendre au moment suivant de l'histoire : <br></br>
+
+          <img className="thumbnail" src={"./assets/images/tree/" + options.video + ".jpg"} alt="thumbnail" />
+
+          <p>
+            <span className="title-video">{this.getCamelCaseArray(options.video)} </span> <br></br>
+            <span className="description-video">{options.name}</span>
+          </p>
+          <p>Confirmez-vous ce choix ?</p>
+        </div>
+        <button className="rodal-confirm-btn" onClick={() => proceed()}>Confirmer</button>
+        <button className="rodal-cancel-btn" onClick={() => cancel()}>Annuler</button>
+        <span className="rodal-close"></span>
+      </Rodal>
+    )
+  }
 }
 
 TreeModal.propTypes = {
-    show: PropTypes.bool,            // from confirmable. indicates if the dialog is shown or not.
-    proceed: PropTypes.func,         // from confirmable. call to close the dialog with promise resolved.
-    cancel: PropTypes.func,          // from confirmable. call to close the dialog with promise rejected.
-    dismiss: PropTypes.func,         // from confirmable. call to only close the dialog.
-    confirmation: PropTypes.string,  // arguments of your confirm function
-    options: PropTypes.object        // arguments of your confirm function
+  show: PropTypes.bool,            // from confirmable. indicates if the dialog is shown or not.
+  proceed: PropTypes.func,         // from confirmable. call to close the dialog with promise resolved.
+  cancel: PropTypes.func,          // from confirmable. call to close the dialog with promise rejected.
+  dismiss: PropTypes.func,         // from confirmable. call to only close the dialog.
+  confirmation: PropTypes.string,  // arguments of your confirm function
+  options: PropTypes.object        // arguments of your confirm function
 }
 
 export default confirmable(TreeModal);
