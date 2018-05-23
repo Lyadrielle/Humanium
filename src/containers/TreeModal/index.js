@@ -26,7 +26,10 @@ class TreeModal extends Component {
 
           <div className ="picture-stats-container">
           <img className="thumbnail" src={"./assets/images/tree/" + options.video + ".jpg"} alt="thumbnail" />
-          <p><span className="percentage">80%</span> <br/>des joueurs ont choisit comme vous</p>
+          <p><span className="percentage">80%</span> <br/>
+              {options.type ==='QTE'&&' des joueurs ont obtenu le même résultat'}
+              {options.type ==='Choice'&&' des joueurs ont fait le même choix que vous'}
+          </p>
           </div>
           <p>
             <span className="title-video">{this.getCamelCaseArray(options.video)} </span> <br></br>

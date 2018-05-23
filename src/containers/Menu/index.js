@@ -17,8 +17,7 @@ class Menu extends Component {
   render() {
     const { history } = this.props
     const { hide } = this.state
-    const keepVisible = !window.location.href.includes('/Film')
-
+    const keepVisible = !window.location.href.includes('/film')
     return (
       <div 
         className={`menu ${hide && !keepVisible ? 'hide-menu' : ''}`}
