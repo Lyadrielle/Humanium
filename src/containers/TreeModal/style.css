@@ -5,8 +5,22 @@
 }
 
 .thumbnail {
-  max-width: 43%;
+  height:100px;
   margin-top:5px;
+}
+
+
+.percentage {
+  font-size:50px;
+  font-weight: bolder;
+}
+
+.picture-stats-container {
+  display:flex;
+}
+
+.picture-stats-container p{
+  padding-left: 10px;
 }
 
 .rodal-dialog .title-video {
@@ -35,6 +49,8 @@
   color: white;
 }
 .body {
+  display:flex;
+  flex-direction: column;
   padding-top: 15px;
   color: white;
 }
