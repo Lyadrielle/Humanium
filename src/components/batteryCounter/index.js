@@ -19,7 +19,6 @@ class BatteryCounter extends Component {
       else if(newTimer <= this.props.timeInit / 10.0) { batteryImg = 'battery_06.png' }
     }
 
-
     return (
       <div>
           <Image
