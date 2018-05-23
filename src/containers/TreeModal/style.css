@@ -5,7 +5,17 @@
 }
 
 .thumbnail {
-  max-width: 45%;
+  max-width: 43%;
+  margin-top:5px;
+}
+
+.rodal-dialog .title-video {
+  font-weight: bold;
+  
+}
+
+.rodal-dialog .description-video {
+  font-weight: 200;
 }
 
 .rodal-dialog p, .header, .body, .rodal-confirm-btn, .rodal-cancel-btn {
