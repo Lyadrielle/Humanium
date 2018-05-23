@@ -122,7 +122,7 @@ class VideoMenu extends Component {
           </div>
 
           <div className="right-buttons">
-            <div className = "drop">       
+            {/*<div className = "drop">       
               {this.state.subListOpen ? (
               <DropTopButton 
                 onClick = {this.updateSubLang}
@@ -168,7 +168,7 @@ class VideoMenu extends Component {
                   }
                 }
               />
-            </div>
+              </div>*/}
 
               <ImageButton 
                   onClick = {
