@@ -1,20 +1,20 @@
 [
   {
-    "id": "0-01_streetFightHospitalWakeUp",
-    "name": "After a fight, Liza wake up at the hospital",
-    "title": "Chapter 0",
+    "id": "0-01_reveil",
     "visibleOnTree" : true,
-    "video": "streetFightHospitalWakeUp",
+    "name": "",
+    "title": "Chapitre",
+    "video": "reveil",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/streetFightHospitalWakeUp.mp4",
     "type": "Choice",
     "choices": [
       {
         "text": "Hocher la tête",
-        "next": "A0-02_hospitalAnswer"
+        "next": "A0-02_hopitalHocherTete"
       },
       {
         "text": "Rester immobile",
-        "next": "B0-02_hospitalAnswer"
+        "next": "B0-02_hopitalImmobile"
       }
     ],
     "time": 5,
@@ -22,92 +22,90 @@
   },
 
   {
-    "id": "A0-02_hospitalAnswer",
-    "title": "Chapter 0 - Choice",
+    "id": "A0-02_hopitalHocherTete",
     "visibleOnTree" : false,
-    "name": "Liza nods to the doctor",
-    "video": "hospitalAnswer_nod",
+    "video": "hopitalHocherTete",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_nod.mp4",
     "type": "Cinematic",
-    "next": "0-03_hospitalQuestion"
+    "next": "0-03_hopitalQuestion"
   },
 
   {
-    "id": "B0-02_hospitalAnswer",
-    "title": "Chapter 0 - Choice",
+    "id": "B0-02_hopitalImmobile",
     "visibleOnTree" : false,
-    "name": "Liza stays immobile",
-    "video": "hospitalAnswer_noNod",
+    "video": "hopitalImmobile",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_noNod.mp4",
     "type": "Cinematic",
-    "next": "0-03_hospitalQuestion"
+    "next": "0-03_hopitalQuestion"
   },
 
   {
-    "id": "0-03_hospitalQuestion",
-    "name": "The Doctor checks Liza's body & brain functions",
-    "title": "Chapter 0 - QTE",
-    "visibleOnTree" : false,
-    "video": "hospitalQuestion",
+    "id": "0-03_hopitalQuestion",
+    "visibleOnTree" : true,
+    "name": "",
+    "title": "Chapitre",
+    "video": "hopitalQuestion",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalQuestion.mp4",
     "type": "QTE",
     "qteType": "sequence",
     "sequence": ["ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"],
-    "success": "A0-04_hospitalAnswer",
-    "failure": "B0-04_hospitalAnswer",
+    "success": "A0-04_hopitalQatre",
+    "failure": "B0-04_hopitalMuette",
     "time": 5,
     "defaultOutcome": "failure"
   },
 
   {
-    "id": "A0-04_hospitalAnswer",
-    "name": "Liza says 4",
-    "title": "Chapter 0 - QTE Answer",
+    "id": "A0-04_hopitalQatre",
     "visibleOnTree" : false,
-    "video": "hospitalAnswer_four",
+    "video": "hopitalQatre",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_four.mp4",
     "type": "Cinematic",
-    "next": "0-05_hospitalScold"
+    "next": "0-05_hospitalSermon"
   },
 
   {
-    "id": "B0-04_hospitalAnswer",
-    "name": "Liza says nothing",
-    "title": "Chapter 0 - QTE Answer",
+    "id": "B0-04_hopitalMuette",
     "visibleOnTree" : false,
     "video": "hospitalAnswer_noFour",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_noFour.mp4",
     "type": "Cinematic",
-    "next": "0-05_hospitalScold"
+    "next": "0-05_hospitalSermon"
   },
 
   {
-    "id": "0-05_hospitalScold",
-    "name": "The doctor scold Liza for her recklesness",
-    "title": "Chapter 1",
-    "visibleOnTree" : true,
-    "video": "hospitalScold",
+    "id": "0-05_hospitalSermon",
+    "visibleOnTree" : false,
+    "video": "hospitalSermon",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalScold.mp4",
     "type": "Cinematic",
-    "next": "0-06_maloEncounter"
+    "next": "0-06_rencontreAvecMalo"
   },
 
   {
+<<<<<<< 1d9ddd43f22fdf0e73a75ece48a3bcf057914661
     "id": "0-06_maloEncounter",
     "name": "Liza find malo breaking in Eve's place",
     "title": "Chapter 1",
     "visibleOnTree" : false,
     "video": "maloEncounter",
+=======
+    "id": "0-06_rencontreAvecMalo",
+    "visibleOnTree" : true,
+    "name": "",
+    "title": "Chapitre",
+    "video": "rencontreAvecMalo",
+>>>>>>> SQLITE logique
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/maloEncounter.mp4",
     "type": "Choice",
     "choices": [
       {
-        "text": "Let him go",
-        "next": "1-01_letMaloGo"
+        "text": "Le laisser partir",
+        "next": "1-01_laisserPartirMalo"
       },
       {
-        "text": "Arrest him now",
-        "next": "2-01_arrestMalo"
+        "text": "L'arrêter maintenant",
+        "next": "2-01_arreterMalo"
       }
     ],
     "time": 5,
@@ -115,57 +113,581 @@
   },
 
   {
-    "id": "1-01_letMaloGo",
-    "name": "Liza lets Malo run away",
-    "title": "Chapter 2",
-    "visibleOnTree" : true,
-    "video": "letMaloGo",
+    "id": "1-01_laisserPartirMalo",
+    "visibleOnTree" : false,
+    "video": "laisserPartirMalo",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/letMaloGo.mp4",
     "type": "Cinematic",
-    "next": "1-02_streetSection"
+    "next": null
   },
 
   {
-    "id": "2-01_ArrestMalo",
-    "name": "Liza arrests Malo on the spot",
-    "title": "Chapter 2",
-    "visibleOnTree" : true,
-    "video": "arrestMalo",
+    "id": "2-01_arreterMalo",
+    "visibleOnTree" : false,
+    "video": "arreterMalo",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/arrestMalo.mp4",
     "type": "Cinematic",
     "next": null
   },
 
   {
+<<<<<<< 1d9ddd43f22fdf0e73a75ece48a3bcf057914661
     "id": "1-02_StreetSection",
     "name": "Liza search the streets to find the group's HQ. She start panicing and encounter someone",
     "title": "Chapter 4",
     "visibleOnTree" : false,
     "video": "streetSection",
+=======
+    "id": "1-02_dansLaRue",
+    "visibleOnTree" : true,
+    "name": "",
+    "title": "Chapitre",
+    "video": "dansLaRue",
+>>>>>>> SQLITE logique
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "1-03_rencontreAvecAlois"
+  },
+
+  {
+    "id": "1-03_rencontreAvecAlois",
+    "visibleOnTree" : false,
+    "video": "rencontreAvecAlois",
+    "videoLink": "https://.mp4",
+    "type": "Choice",
+    "choices": [
+      {
+        "text": "Taire ça condition",
+        "next": "A1-01_discussionAloisV1"
+      },
+      {
+        "text": "Avouer être une cyborg",
+        "next": "B1-01_discussionAloisV2"
+      }
+    ],
+    "timer": "10",
+    "defaultChoice": "1"
+  },
+  
+  {
+    "id": "A1-01_discussionAloisV1",
+    "visibleOnTree" : false,
+    "video": "discussionAloisV1",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-02_coursePoursuite"
+  },
+
+  {
+    "id": "A1-02_coursePoursuite",
+    "visibleOnTree" : true,
+    "name": "",
+    "title": "Chapitre",
+    "video": "coursePoursuite",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft",
+      "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft",
+      "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft"
+    ],
+    "success": "A1-03-S_desarmementDifficile",
+    "failure": "A1-03-F_desarmementFacile",
+    "time": 5,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "A1-03-S_desarmementDifficile",
+    "visibleOnTree" : false,
+    "video": "desarmementDifficile",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "sequence",
+    "sequence": [
+      "ArrowLeft", "ArrowDown", "ArrowLeft", "ArrowDown", "ArrowUp",
+      "ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"
+    ],
+    "success": "A1-03-SS_eveRecoitCoup",
+    "failure": "A1-03-SF_lisaRecoitCoup",
+    "time": 5,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "A1-03-F_desarmementFacile",
+    "visibleOnTree" : false,
+    "video": "desarmementFacile",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "sequence",
+    "sequence": [
+      "ArrowLeft", "ArrowDown", "ArrowLeft", "ArrowDown", "ArrowUp",
+      "ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"
+    ],
+    "success": "A1-03-FS_eveRecoitCoup",
+    "failure": "A1-03-FF_lisaRecoitCoup",
+    "time": 5,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "A1-03-SS_eveRecoitCoup",
+    "visibleOnTree" : false,
+    "video": "eveGetsPunched",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+    ],
+    "success": "A1-03-SSS_brasRobotEndomage",
+    "failure": "A1-03-SSF_brasRobotEndomage",
+    "time": 3,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "A1-03-SF_lisaRecoitCoup",
+    "visibleOnTree" : false,
+    "video": "lisaRecoitCoup",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+    ],
+    "success": "A1-03-SFS_brasRobotEndomage",
+    "failure": "A1-03-SFF_brasRobotEndomage",
+    "time": 3,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "A1-03-FS_eveRecoitCoup",
+    "visibleOnTree" : false,
+    "video": "eveGetsPunched",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+    ],
+    "success": "A1-03-FSS_brasRobotEndomage",
+    "failure": "A1-03-FSF_brasRobotEndomage",
+    "time": 3,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "A1-03-FF_lisaRecoitCoup",
+    "visibleOnTree" : false,
+    "video": "lisaRecoitCoup",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+    ],
+    "success": "A1-03-FFS_brasRobotEndomage",
+    "failure": "A1-03-FFF_brasRobotEndomage",
+    "time": 3,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "A1-03-SSS_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-04_lisaGagneCombat"
+  },
+
+  {
+    "id": "A1-03-SSF_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-04_lisaGagneCombat"
+  },
+
+  {
+    "id": "A1-03-SFS_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-04_lisaGagneCombat"
+  },
+
+  {
+    "id": "A1-03-SFF_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-04_eveGagneCombat"
+  },
+
+  {
+    "id": "A1-03-FSS_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-04_lisaGagneCombat"
+  },
+
+  {
+    "id": "A1-03-FSF_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-04_eveGagneCombat"
+  },
+
+  {
+    "id": "A1-03-FFS_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-04_eveGagneCombat"
+  },
+
+  {
+    "id": "A1-03-FFF_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-04_eveGagneCombat"
+  },
+
+  {
+    "id": "A1-04_lisaGagneCombat",
+    "visibleOnTree" : false,
+    "video": "lisaGagneCombat",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-05_aloisPrendCle"
+  },
+
+  {
+    "id": "A1-04_eveGagneCombat",
+    "visibleOnTree" : false,
+    "video": "eveGagneCombat",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-05_aloisPrendCle"
+  },
+
+  {
+    "id": "A1-05_aloisPrendCle",
+    "visibleOnTree" : false,
+    "video": "aloisPrendCle",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "A1-06_recupererCle"
+  },
+
+  {
+    "id": "A1-06_recupererCle",
+    "visibleOnTree" : true,
+    "name": "",
+    "title": "Chapitre",
+    "video": "recupererCle",
+    "videoLink": "https://.mp4",
+    "type": "Choice",
+    "choices": [
+      {
+        "text": "Abandonner la clé",
+        "next": "A1-fin_courtMartiale"
+      },
+      {
+        "text": "Récupérer la clé",
+        "next": "A1-fin_blesserAlois"
+      }
+    ],
+    "time": 5,
+    "defaultChoice": "1"
+  },
+
+  {
+    "id": "A1-fin_courtMartiale",
+    "visibleOnTree" : false,
+    "video": "courtMartiale",
     "videoLink": "https://.mp4",
     "type": "Cinematic",
     "next": null
   },
 
   {
-    "id": "1-03_aloisEncounter",
-    "name": "Liza finally find the base. She then encounter Alois roaming arround.",
-    "title": "Chapter 4 - Choice",
+    "id": "A1-fin_blesserAlois",
     "visibleOnTree" : false,
-    "video": "aloisEncounter",
+    "video": "blesserAlois",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": null
+  },
+
+  {
+    "id": "B1-01_discussionAloisV2",
+    "visibleOnTree" : false,
+    "video": "discussionAloisV2",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-02_coursePoursuite"
+  },
+
+  {
+    "id": "B1-02_coursePoursuite",
+    "visibleOnTree" : true,
+    "name": "",
+    "title": "Chapitre",
+    "video": "coursePoursuite",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft",
+      "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft",
+      "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft"
+    ],
+    "success": "B1-03-S_desarmementDifficile",
+    "failure": "B1-03-F_desarmementFacile",
+    "time": 5,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "B1-03-S_desarmementDifficile",
+    "visibleOnTree" : false,
+    "video": "desarmementDifficile",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "sequence",
+    "sequence": [
+      "ArrowLeft", "ArrowDown", "ArrowLeft", "ArrowDown", "ArrowUp",
+      "ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"
+    ],
+    "success": "B1-03-SS_eveRecoitCoup",
+    "failure": "B1-03-SF_lisaRecoitCoup",
+    "time": 5,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "B1-03-F_desarmementFacile",
+    "visibleOnTree" : false,
+    "video": "desarmementFacile",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "sequence",
+    "sequence": [
+      "ArrowLeft", "ArrowDown", "ArrowLeft", "ArrowDown", "ArrowUp",
+      "ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"
+    ],
+    "success": "B1-03-FS_eveRecoitCoup",
+    "failure": "B1-03-FF_lisaRecoitCoup",
+    "time": 5,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "B1-03-SS_eveRecoitCoup",
+    "visibleOnTree" : false,
+    "video": "eveGetsPunched",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+    ],
+    "success": "B1-03-SSS_brasRobotEndomage",
+    "failure": "B1-03-SSF_brasRobotEndomage",
+    "time": 3,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "B1-03-SF_lisaRecoitCoup",
+    "visibleOnTree" : false,
+    "video": "lisaRecoitCoup",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+    ],
+    "success": "B1-03-SFS_brasRobotEndomage",
+    "failure": "B1-03-SFF_brasRobotEndomage",
+    "time": 3,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "B1-03-FS_eveRecoitCoup",
+    "visibleOnTree" : false,
+    "video": "eveGetsPunched",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+    ],
+    "success": "B1-03-FSS_brasRobotEndomage",
+    "failure": "B1-03-FSF_brasRobotEndomage",
+    "time": 3,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "B1-03-FF_lisaRecoitCoup",
+    "visibleOnTree" : false,
+    "video": "lisaRecoitCoup",
+    "videoLink": "https://.mp4",
+    "type": "QTE",
+    "qteType": "smash",
+    "sequence": [
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+      "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+    ],
+    "success": "B1-03-FFS_brasRobotEndomage",
+    "failure": "B1-03-FFF_brasRobotEndomage",
+    "time": 3,
+    "defaultOutcome": "failure"
+  },
+
+  {
+    "id": "B1-03-SSS_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-04_lisaGagneCombat"
+  },
+
+  {
+    "id": "B1-03-SSF_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-04_lisaGagneCombat"
+  },
+
+  {
+    "id": "B1-03-SFS_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-04_lisaGagneCombat"
+  },
+
+  {
+    "id": "B1-03-SFF_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-04_eveGagneCombat"
+  },
+
+  {
+    "id": "B1-03-FSS_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-04_lisaGagneCombat"
+  },
+
+  {
+    "id": "B1-03-FSF_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-04_eveGagneCombat"
+  },
+
+  {
+    "id": "B1-03-FFS_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-04_eveGagneCombat"
+  },
+
+  {
+    "id": "B1-03-FFF_brasRobotEndomage",
+    "visibleOnTree" : false,
+    "video": "brasRobotEndomage",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-04_eveGagneCombat"
+  },
+
+  {
+    "id": "B1-04_lisaGagneCombat",
+    "visibleOnTree" : false,
+    "video": "lisaGagneCombat",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-05_enPrison"
+  },
+
+  {
+    "id": "B1-04_eveGagneCombat",
+    "visibleOnTree" : false,
+    "video": "eveGagneCombat",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-05_enPrison"
+  },
+
+  {
+    "id": "B1-05_enPrison",
+    "visibleOnTree" : false,
+    "video": "enPrison",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "B1-06_sortieDePrison"
+  },
+
+  {
+    "id": "B1-06_sortieDePrison",
+    "visibleOnTree" : true,
+    "name": "",
+    "title": "Chapitre",
+    "video": "sortieDePrison",
     "videoLink": "https://.mp4",
     "type": "Choice",
     "choices": [
       {
-        "text": "tell him",
-        "next": null
+        "text": "Abandonner la clé",
+        "next": "A1-fin_courtMartiale"
       },
       {
-        "text": "stay quiet",
-        "next": null
+        "text": "Récupérer la clé",
+        "next": "A1-fin_blesserAlois"
       }
     ],
-    "timer": "10",
+    "time": 5,
     "defaultChoice": "1"
   }
 ]
