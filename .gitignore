@@ -81,3 +81,6 @@ yarn-error.log*
 
 #SQLITE
 /api/ressources/playersData.db
+
+#videos
+/api/ressources/videos

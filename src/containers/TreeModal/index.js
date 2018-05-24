@@ -25,12 +25,15 @@ class TreeModal extends Component {
           Vous êtes sur le point de vous rendre au moment suivant de l'histoire : <br></br>
 
           <div className ="picture-stats-container">
-          <img className="thumbnail" src={"./assets/images/tree/" + options.video + ".jpg"} alt="thumbnail" />
-          <p><span className="percentage">80%</span> <br/>des joueurs ont choisit comme vous</p>
+          <img className="thumbnail" src={"./assets/images/tree/" + options.node.video + ".jpg"} alt="thumbnail" />
+          {options.percentage?<p><span className="percentage">{options.percentage}%</span> <br/>
+              {options.node.type ==='QTE'&&' des joueurs ont obtenu le même résultat'}
+              {options.node.type ==='Choice'&&' des joueurs ont fait le même choix que vous'}
+          </p>:''}
           </div>
           <p>
-            <span className="title-video">{this.getCamelCaseArray(options.video)} </span> <br></br>
-            <span className="description-video">{options.name}</span>
+            <span className="title-video">{this.getCamelCaseArray(options.node.video)} </span> <br></br>
+            <span className="description-video">{options.node.name}</span>
           </p>
           <p>Confirmez-vous ce choix ?</p>
         </div>
@@ -51,4 +54,4 @@ TreeModal.propTypes = {
   options: PropTypes.object        // arguments of your confirm function
 }
 
-export default confirmable(TreeModal);
+export default confirmable(TreeModal)
