@@ -94,17 +94,8 @@ class VideoMenu extends Component {
           />
         </div>
 
-        <div className={`center-buttons ${this.props.show ? '' : 'hide-video-menu'}`}>
-          <ImageButton
-            onClick={() => console.log('You skiped the video')}
-            src="./assets/images/skip.svg"
-            className="skip-button"
-            style={{ 'height': '50%' }}
-          />
-        </div>
-
         <div className={`right-buttons ${this.props.show ? '' : 'hide-video-menu'}`}>
-          <div className="drop">
+         { /*<div className="drop">
             {this.state.subListOpen
               ? <DropTopButton
                 onClick={this.updateSubLang}
@@ -147,7 +138,7 @@ class VideoMenu extends Component {
               }}
             />
           </div>
-
+         */}
           <ImageButton
             onClick={() => {
               this.setState((prevState) => ({ 'fullScreen': !prevState.fullScreen }))

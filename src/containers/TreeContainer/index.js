@@ -102,24 +102,18 @@ class TreeContainer extends Component {
     let nodeStats = null
     let result = null
     let firstOrSecond
-    console.log("NODE&NEXT")
-    console.log(node)
-    console.log(nextNode)
     if(nextNode) firstOrSecond = this.getColumnName(node, nextNode.id)
     nodeStats = this.state.percentageTable.find((item)=>{
-      return (item.node_id == node.id)
+      return (item.node_id === node.id)
     })
 
-    console.log(firstOrSecond)
     if (nodeStats != null) result = nodeStats[firstOrSecond]/(nodeStats['first'] + nodeStats['second']) * 100
-    console.log(nodeStats)
-    console.log(this.state.percentageTable)
     return result
   }
 
   displayTreeNodes() {
     const nodes = this.state.nodes.filter((node, i) => {
-      return (node.visibleOnTree != false)
+      return (node.visibleOnTree !== false)
     })
 
     return (
