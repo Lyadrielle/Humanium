@@ -169,6 +169,19 @@ class VideoMenu extends Component {
                 }
               />
               </div>*/}
+              <GlitchButton 
+                text = "TUTO"
+                style = {{
+                  paddingTop : '8px',
+                  marginLeft:'30px',
+                  marginRight:'30px'
+                }}
+                onClick = {
+                  ()=> {
+                    this.setState(prevState =>({qualityListOpen:!prevState.qualityListOpen}))
+                  }
+                }
+              />
 
               <ImageButton 
                   onClick = {
