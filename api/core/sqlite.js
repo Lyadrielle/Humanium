@@ -163,8 +163,9 @@ function updateNode(db, id, columnName) {
     .then(result => {
       db.serialize( () => {
         db.run(sql, [(Number(result) || 0) + 1, id], err => {
-          if (err) return log(err.message);
-          log('debug', `Row(s) correctly insterted`);
+          if (err) return log(err.message)
+          log('debug', `Row(s) correctly insterted`)
+          close(db)
         })
       })
     })

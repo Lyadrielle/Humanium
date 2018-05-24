@@ -82,5 +82,4 @@ function updateDataBase(currentNode, nextId) {
 
   let db = openConnection()
   updateNode(db, currentNode.id, firstOrSecond)
-  close(db)
 }
