@@ -30,6 +30,11 @@ class Menu extends Component {
           onClick={() => history.push('/Intro')}
           style = {{margin:0, fontSize:"16px"}}
         />
+        <GlitchButton
+          text="Tutorial"
+          onClick={() => history.push('/project')}
+          style = {{margin:0, fontSize:"16px"}}
+        />
         <ImageButton 
           onClick={() => history.push('/')}
           src="./assets/images/title.svg"
@@ -37,7 +42,7 @@ class Menu extends Component {
           style = {{height:"50%", margin:"0 15% 0 15%"}}
         />
         <GlitchButton
-          text="Project"
+          text="Projet"
           onClick={() => history.push('/project')}
           style = {{margin:0, fontSize:"16px"}}
         />

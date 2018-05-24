@@ -8,6 +8,7 @@ import Home from './containers/Home';
 import MenuFilm from './containers/MenuFilm';
 import Film from './containers/Film';
 import Project from './containers/Project';
+import Tuto from './containers/Tuto';
 import Team from './containers/Team';
 import PageQTE from './containers/pageQTE';
 import PageChoice from './containers/pageChoice';
@@ -57,6 +58,7 @@ class App extends Component {
           <Route path="/intro" exact component={MenuFilm} />
           <Route path="/film" exact component={Film} />
           <Route path="/project" exact component={Project} />
+          <Route path="/tuto" exact component={Tuto} />
           <Route path="/team" exact component={Team} />
           <Route path="/qte" exact component={PageQTE} />
           <Route path="/choice" exact component={PageChoice} />
