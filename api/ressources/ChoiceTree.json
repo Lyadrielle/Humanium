@@ -2,10 +2,10 @@
   {
     "id": "0-01_reveil",
     "visibleOnTree" : true,
-    "name": "",
+    "name": "Emelisa se bat avec Eve puis se réveil à l'hopital",
     "title": "Chapitre",
     "video": "reveil",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/streetFightHospitalWakeUp.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/streetFightHospitalWakeUp_3.mp4",
     "type": "Choice",
     "choices": [
       {
@@ -42,7 +42,7 @@
   {
     "id": "0-03_hopitalQuestion",
     "visibleOnTree" : true,
-    "name": "",
+    "name": "Le docteur vérifie si Emelisa n'a pas de traumatisme",
     "title": "Chapitre",
     "video": "hopitalQuestion",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalQuestion.mp4",
@@ -61,23 +61,23 @@
     "video": "hopitalQatre",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_four.mp4",
     "type": "Cinematic",
-    "next": "0-05_hopitalSermon"
+    "next": "0-05_hospitalSermon"
   },
 
   {
     "id": "B0-04_hopitalMuette",
     "visibleOnTree" : false,
-    "video": "hopitalAnswer_noFour",
+    "video": "hospitalAnswer_noFour",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalAnswer_noFour.mp4",
     "type": "Cinematic",
     "next": "0-05_hospitalSermon"
   },
 
   {
-    "id": "0-05_hopitalSermon",
+    "id": "0-05_hospitalSermon",
     "visibleOnTree" : false,
-    "video": "hopitalSermon",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalScold.mp4",
+    "video": "hospitalSermon",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hospitalScold_2-3.mp4",
     "type": "Cinematic",
     "next": "0-06_rencontreAvecMalo"
   },
@@ -85,7 +85,7 @@
   {
     "id": "0-06_rencontreAvecMalo",
     "visibleOnTree" : true,
-    "name": "",
+    "name": "Emelisa part à la recherche d'indinces chez Eve",
     "title": "Chapitre",
     "video": "rencontreAvecMalo",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/maloEncounter.mp4",
@@ -122,15 +122,44 @@
     "next": null
   },
 
-  {
+{
     "id": "1-02_dansLaRue",
-    "visibleOnTree" : true,
-    "name": "",
-    "title": "Chapitre",
+    "visibleOnTree" : false,
     "video": "dansLaRue",
     "videoLink": "https://.mp4",
     "type": "Cinematic",
-    "next": "1-03_rencontreAvecAlois"
+    "next": "1-03_rechercheSousTerrain"
+  },
+
+  {
+    "id": "1-03_rechercheSousTerrain",
+    "visibleOnTree" : false,
+    "video": "rechercheSousTerrain",
+    "videoLink": "https://.mp4",
+    "type": "Cinematic",
+    "next": "1-04_rencontreAvecAlois"
+  },
+
+  {
+    "id": "1-04_rencontreAvecAlois",
+    "visibleOnTree" : true,
+    "name": "Emelisa recontre Alois, médecin volontaire",
+    "title": "Chapitre",
+    "video": "rencontreAvecAlois",
+    "videoLink": "https://.mp4",
+    "type": "Choice",
+    "choices": [
+      {
+        "text": "Taire ça condition",
+        "next": "A1-01_discussionAloisV1"
+      },
+      {
+        "text": "Avouer être une cyborg",
+        "next": "B1-01_discussionAloisV2"
+      }
+    ],
+    "timer": "10",
+    "defaultChoice": "1"
   },
 
   {
@@ -141,7 +170,7 @@
     "type": "Choice",
     "choices": [
       {
-        "text": "Taire ça condition",
+        "text": "Taire sa condition",
         "next": "A1-01_discussionAloisV1"
       },
       {
@@ -165,7 +194,7 @@
   {
     "id": "A1-02_coursePoursuite",
     "visibleOnTree" : true,
-    "name": "",
+    "name": "Emlisa retrouve Eve et part à sa poursuite.",
     "title": "Chapitre",
     "video": "coursePoursuite",
     "videoLink": "https://.mp4",
@@ -386,7 +415,7 @@
   {
     "id": "A1-06_recupererCle",
     "visibleOnTree" : true,
-    "name": "",
+    "name": "Alois a récupérer la clé, que faire ?",
     "title": "Chapitre",
     "video": "recupererCle",
     "videoLink": "https://.mp4",
@@ -435,7 +464,7 @@
   {
     "id": "B1-02_coursePoursuite",
     "visibleOnTree" : true,
-    "name": "",
+    "name": "Emlisa retrouve Eve et part à sa poursuite.",
     "title": "Chapitre",
     "video": "coursePoursuite",
     "videoLink": "https://.mp4",
