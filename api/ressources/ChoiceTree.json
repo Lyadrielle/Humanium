@@ -5,7 +5,7 @@
     "name": "Emelisa se bat avec Eve puis se réveille à l'hopital",
     "title": "Chapitre",
     "video": "reveil",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/streetFightHospitalWakeUp.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/reveil.mp4",
     "type": "Choice",
     "choices": [
       {
@@ -66,11 +66,7 @@
   },
   {
     "id": "B0-04_hopitalMuette",
-<<<<<<< ee14808230cdbaca4199c6b117b5c17588624c43
     "visibleOnTree": false,
-=======
-    "visibleOnTree" : false,
->>>>>>> showing Modal tutorial
     "video": "hopitalMuette",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalMuette.mp4",
     "type": "Cinematic",
@@ -78,11 +74,7 @@
   },
   {
     "id": "0-05_hopitalSermon",
-<<<<<<< ee14808230cdbaca4199c6b117b5c17588624c43
     "visibleOnTree": false,
-=======
-    "visibleOnTree" : false,
->>>>>>> showing Modal tutorial
     "video": "hopitalSermon",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalSermon.mp4",
     "type": "Cinematic",
@@ -125,12 +117,7 @@
     "type": "Cinematic",
     "next": "1-02_dansLaRue"
   },
-<<<<<<< ee14808230cdbaca4199c6b117b5c17588624c43
   {
-=======
-
-{
->>>>>>> showing Modal tutorial
     "id": "1-02_dansLaRue",
     "visibleOnTree": false,
     "video": "dansLaRue",
@@ -156,7 +143,7 @@
     "type": "Choice",
     "choices": [
       {
-        "text": "Taire ça condition",
+        "text": "Taire sa condition",
         "next": "A1-01_discussionAloisV1"
       },
       {
@@ -164,7 +151,7 @@
         "next": "B1-01_discussionAloisV2"
       }
     ],
-    "timer": "10",
+    "time": "10",
     "defaultChoice": "1"
   },
   {
@@ -254,15 +241,9 @@
   },
   {
     "id": "A1-03-SS_eveRecoitCoup",
-<<<<<<< ee14808230cdbaca4199c6b117b5c17588624c43
     "visibleOnTree": false,
     "video": "eveRecoitCoup",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
-=======
-    "visibleOnTree" : false,
-    "video": "eveRecoitCoup",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
->>>>>>> showing Modal tutorial
     "type": "QTE",
     "qteType": "smash",
     "sequence": [
@@ -308,15 +289,9 @@
   },
   {
     "id": "A1-03-FS_eveRecoitCoup",
-<<<<<<< ee14808230cdbaca4199c6b117b5c17588624c43
     "visibleOnTree": false,
     "video": "eveRecoitCoup",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
-=======
-    "visibleOnTree" : false,
-    "video": "eveRecoitCoup",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
->>>>>>> showing Modal tutorial
     "type": "QTE",
     "qteType": "smash",
     "sequence": [
@@ -440,10 +415,6 @@
     "type": "Cinematic",
     "next": "A1-05_aloisPrendCle"
   },
-<<<<<<< ee14808230cdbaca4199c6b117b5c17588624c43
-=======
-
->>>>>>> showing Modal tutorial
   {
     "id": "A1-05_aloisPrendCle",
     "visibleOnTree": true,
@@ -750,12 +721,7 @@
     "type": "Cinematic",
     "next": "B1-06_sortieDePrison"
   },
-<<<<<<< ee14808230cdbaca4199c6b117b5c17588624c43
   {
-=======
-
-    {
->>>>>>> showing Modal tutorial
     "id": "B1-06_sortieDePrison",
     "visibleOnTree": true,
     "name": "Malo déverouille la porte de la prison et fait sortir Eve et Emelisa",
@@ -786,7 +752,7 @@
   },
   {
     "id": "B1-fin_courtMartialeMalo",
-    "visibleOnTree" : false,
+    "visibleOnTree": false,
     "video": "courtMartialeMalo",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/volerLaCle.mp4",
     "type": "Cinematic",
