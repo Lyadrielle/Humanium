@@ -1,0 +1,695 @@
+[
+    {
+      "id": "0-01_reveil",
+      "visibleOnTree" : true,
+      "name": "Emelisa se bat avec Eve puis se réveille à l'hopital",
+      "title": "Chapitre",
+      "video": "reveil",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/reveil.mp4",
+      "type": "Choice",
+      "choices": [
+        {
+          "text": "Hocher la tête",
+          "next": "A0-02_hopitalHocherTete"
+        },
+        {
+          "text": "Rester immobile",
+          "next": "B0-02_hopitalImmobile"
+        }
+      ],
+      "time": 5,
+      "defaultChoice": "1"
+    },
+  
+    {
+      "id": "A0-02_hopitalHocherTete",
+      "visibleOnTree" : false,
+      "video": "hopitalHocherTete",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalHocherTete.mp4",
+      "type": "Cinematic",
+      "next": "0-03_hopitalQuestion"
+    },
+  
+    {
+      "id": "B0-02_hopitalImmobile",
+      "visibleOnTree" : false,
+      "video": "hopitalImmobile",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalImmobile.mp4",
+      "type": "Cinematic",
+      "next": "0-03_hopitalQuestion"
+    },
+  
+    {
+      "id": "0-03_hopitalQuestion",
+      "visibleOnTree" : true,
+      "name": "Le docteur vérifie qu'Emelisa n'a pas de traumatisme",
+      "title": "Chapitre",
+      "video": "hopitalQuestion",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalQuestion.mp4",
+      "type": "QTE",
+      "qteType": "sequence",
+      "sequence": ["ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"],
+      "success": "A0-04_hopitalQuatre",
+      "failure": "B0-04_hopitalMuette",
+      "time": 5,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "A0-04_hopitalQuatre",
+      "visibleOnTree" : false,
+      "video": "hopitalQuatre",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalQuatre.mp4",
+      "type": "Cinematic",
+      "next": "0-05_hopitalSermon"
+    },
+  
+    {
+      "id": "B0-04_hopitalMuette",
+      "visibleOnTree" : false,
+      "video": "hopitalMuette",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalMuette.mp4",
+      "type": "Cinematic",
+      "next": "0-05_hopitalSermon"
+    },
+  
+    {
+      "id": "0-05_hopitalSermon",
+      "visibleOnTree" : false,
+      "video": "hopitalSermon",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/hopitalSermon.mp4",
+      "type": "Cinematic",
+      "next": "0-06_rencontreAvecMalo"
+    },
+  
+    {
+      "id": "0-06_rencontreAvecMalo",
+      "visibleOnTree" : true,
+      "name": "Emelisa part à la recherche d'indinces chez Eve",
+      "title": "Chapitre",
+      "video": "rencontreAvecMalo",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/rencontreAvecMalo.mp4",
+      "type": "Choice",
+      "choices": [
+        {
+          "text": "Le laisser partir",
+          "next": "1-01_laisserPartirMalo"
+        },
+        {
+          "text": "L'arrêter maintenant",
+          "next": "2-01_arreterMalo"
+        }
+      ],
+      "time": 5,
+      "defaultChoice": "1"
+    },
+  
+    {
+      "id": "1-01_laisserPartirMalo",
+      "visibleOnTree" : false,
+      "video": "laisserPartirMalo",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/laisserPartirMalo.mp4",
+      "type": "Cinematic",
+      "next": 1-02_dansLaRue"
+    },
+  
+    {
+      "id": "2-01_arreterMalo",
+      "visibleOnTree" : false,
+      "video": "arreterMalo",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/arreterMalo.mp4",
+      "type": "Cinematic",
+      "next": 1-02_dansLaRue"
+    },
+  
+  {
+      "id": "1-02_dansLaRue",
+      "visibleOnTree" : false,
+      "video": "dansLaRue",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/dansLaRue.mp4",
+      "type": "Cinematic",
+      "next": "1-03_rechercheSousTerrain"
+    },
+  
+    {
+      "id": "1-03_rechercheSousTerrain",
+      "visibleOnTree" : false,
+      "video": "rechercheSousTerrain",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/rechercheSousTerrain.mp4",
+      "type": "Cinematic",
+      "next": "1-04_rencontreAvecAlois"
+    },
+  
+    {
+      "id": "1-04_rencontreAvecAlois",
+      "visibleOnTree" : true,
+      "name": "Emelisa recontre Alois dans le QG des Intactistes",
+      "title": "Chapitre",
+      "video": "rencontreAvecAlois",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/rencontreAvecAlois.mp4",
+      "type": "Choice",
+      "choices": [
+        {
+          "text": "Taire sa condition",
+          "next": "A1-01_discussionAloisV1"
+        },
+        {
+          "text": "Avouer être une cyborg",
+          "next": "B1-01_discussionAloisV2"
+        }
+      ],
+      "time": "10",
+      "defaultChoice": "1"
+    },
+    
+    {
+      "id": "A1-01_discussionAloisV1",
+      "visibleOnTree" : false,
+      "video": "discussionAloisV1",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/discussionAloisV1.mp4",
+      "type": "Cinematic",
+      "next": "A1-02_coursePoursuite"
+    },
+  
+    {
+      "id": "A1-02_coursePoursuite",
+      "visibleOnTree" : true,
+      "name": "Emlisa retrouve Eve et part à sa poursuite.",
+      "title": "Chapitre",
+      "video": "coursePoursuite",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/coursePoursuite.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft",
+        "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft",
+        "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft"
+      ],
+      "success": "A1-03-S_desarmementDifficile",
+      "failure": "A1-03-F_desarmementFacile",
+      "time": 5,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "A1-03-S_desarmementDifficile",
+      "visibleOnTree" : false,
+      "video": "desarmementDifficile",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/desarmementDifficile.mp4",
+      "type": "QTE",
+      "qteType": "sequence",
+      "sequence": [
+        "ArrowLeft", "ArrowDown", "ArrowLeft", "ArrowDown", "ArrowUp",
+        "ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"
+      ],
+      "success": "A1-03-SS_eveRecoitCoup",
+      "failure": "A1-03-SF_lisaRecoitCoup",
+      "time": 5,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "A1-03-F_desarmementFacile",
+      "visibleOnTree" : false,
+      "video": "desarmementFacile",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/desarmementFacile.mp4",
+      "type": "QTE",
+      "qteType": "sequence",
+      "sequence": [
+        "ArrowLeft", "ArrowDown", "ArrowLeft", "ArrowDown", "ArrowUp",
+        "ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"
+      ],
+      "success": "A1-03-FS_eveRecoitCoup",
+      "failure": "A1-03-FF_lisaRecoitCoup",
+      "time": 5,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "A1-03-SS_eveRecoitCoup",
+      "visibleOnTree" : false,
+      "video": "eveRecoitCoup",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+      ],
+      "success": "A1-03-SSS_brasRobotEndomage",
+      "failure": "A1-03-SSF_brasRobotEndomage",
+      "time": 3,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "A1-03-SF_lisaRecoitCoup",
+      "visibleOnTree" : false,
+      "video": "lisaRecoitCoup",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+      ],
+      "success": "A1-03-SFS_brasRobotEndomage",
+      "failure": "A1-03-SFF_brasRobotEndomage",
+      "time": 3,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "A1-03-FS_eveRecoitCoup",
+      "visibleOnTree" : false,
+      "video": "eveRecoitCoup",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+      ],
+      "success": "A1-03-FSS_brasRobotEndomage",
+      "failure": "A1-03-FSF_brasRobotEndomage",
+      "time": 3,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "A1-03-FF_lisaRecoitCoup",
+      "visibleOnTree" : false,
+      "video": "lisaRecoitCoup",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+      ],
+      "success": "A1-03-FFS_brasRobotEndomage",
+      "failure": "A1-03-FFF_brasRobotEndomage",
+      "time": 3,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "A1-03-SSS_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "A1-04_lisaGagneCombat"
+    },
+  
+    {
+      "id": "A1-03-SSF_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "A1-04_lisaGagneCombat"
+    },
+  
+    {
+      "id": "A1-03-SFS_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "A1-04_lisaGagneCombat"
+    },
+  
+    {
+      "id": "A1-03-SFF_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "A1-04_eveGagneCombat"
+    },
+  
+    {
+      "id": "A1-03-FSS_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "A1-04_lisaGagneCombat"
+    },
+  
+    {
+      "id": "A1-03-FSF_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "A1-04_eveGagneCombat"
+    },
+  
+    {
+      "id": "A1-03-FFS_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "A1-04_eveGagneCombat"
+    },
+  
+    {
+      "id": "A1-03-FFF_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "A1-04_eveGagneCombat"
+    },
+  
+    {
+      "id": "A1-04_lisaGagneCombat",
+      "visibleOnTree" : false,
+      "video": "lisaGagneCombat",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaGagneCombat.mp4",
+      "type": "Cinematic",
+      "next": "A1-05_aloisPrendCle"
+    },
+  
+    {
+      "id": "A1-04_eveGagneCombat",
+      "visibleOnTree" : false,
+      "video": "eveGagneCombat",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaGagneCombat.mp4",
+      "type": "Cinematic",
+      "next": "A1-05_aloisPrendCle"
+    },
+  
+    {
+      "id": "A1-05_aloisPrendCle",
+      "visibleOnTree" : true,
+      "name": "Alois récupère la clé ALPC",
+      "title": "Chapitre",
+      "video": "aloisPrendCle",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/aloisPrendCle.mp4",
+      "type": "Choice",
+      "choices": [
+        {
+          "text": "Abandonner la clé",
+          "next": "A1-fin_courtMartialeAlois"
+        },
+        {
+          "text": "Récupérer la clé",
+          "next": "A1-fin_blesserAlois"
+        }
+      ],
+      "time": 5,
+      "defaultChoice": "1"
+    },
+  
+    {
+      "id": "A1-fin_courtMartialeAlois",
+      "visibleOnTree" : false,
+      "video": "courtMartialeAlois",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/courtMartialeAlois.mp4",
+      "type": "Cinematic",
+      "next": null
+    },
+  
+    {
+      "id": "A1-fin_blesserAlois",
+      "visibleOnTree" : false,
+      "video": "blesserAlois",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/blesserAlois.mp4",
+      "type": "Cinematic",
+      "next": null
+    },
+  
+    {
+      "id": "B1-01_discussionAloisV2",
+      "visibleOnTree" : false,
+      "video": "discussionAloisV2",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/discussionAloisV2.mp4",
+      "type": "Cinematic",
+      "next": "B1-02_coursePoursuite"
+    },
+  
+    {
+      "id": "B1-02_coursePoursuite",
+      "visibleOnTree" : true,
+      "name": "Emlisa retrouve Eve et part à sa poursuite.",
+      "title": "Chapitre",
+      "video": "coursePoursuite",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/coursePoursuite.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft",
+        "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft",
+        "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft", "ArrowLeft"
+      ],
+      "success": "B1-03-S_desarmementDifficile",
+      "failure": "B1-03-F_desarmementFacile",
+      "time": 5,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "B1-03-S_desarmementDifficile",
+      "visibleOnTree" : false,
+      "video": "desarmementDifficile",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/desarmementDifficile.mp4",
+      "type": "QTE",
+      "qteType": "sequence",
+      "sequence": [
+        "ArrowLeft", "ArrowDown", "ArrowLeft", "ArrowDown", "ArrowUp",
+        "ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"
+      ],
+      "success": "B1-03-SS_eveRecoitCoup",
+      "failure": "B1-03-SF_lisaRecoitCoup",
+      "time": 5,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "B1-03-F_desarmementFacile",
+      "visibleOnTree" : false,
+      "video": "desarmementFacile",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/desarmementFacile.mp4",
+      "type": "QTE",
+      "qteType": "sequence",
+      "sequence": [
+        "ArrowLeft", "ArrowDown", "ArrowLeft", "ArrowDown", "ArrowUp",
+        "ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"
+      ],
+      "success": "B1-03-FS_eveRecoitCoup",
+      "failure": "B1-03-FF_lisaRecoitCoup",
+      "time": 5,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "B1-03-SS_eveRecoitCoup",
+      "visibleOnTree" : false,
+      "video": "eveRecoitCoup",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+      ],
+      "success": "B1-03-SSS_brasRobotEndomage",
+      "failure": "B1-03-SSF_brasRobotEndomage",
+      "time": 3,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "B1-03-SF_lisaRecoitCoup",
+      "visibleOnTree" : false,
+      "video": "lisaRecoitCoup",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+      ],
+      "success": "B1-03-SFS_brasRobotEndomage",
+      "failure": "B1-03-SFF_brasRobotEndomage",
+      "time": 3,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "B1-03-FS_eveRecoitCoup",
+      "visibleOnTree" : false,
+      "video": "eveRecoitCoup",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+      ],
+      "success": "B1-03-FSS_brasRobotEndomage",
+      "failure": "B1-03-FSF_brasRobotEndomage",
+      "time": 3,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "B1-03-FF_lisaRecoitCoup",
+      "visibleOnTree" : false,
+      "video": "lisaRecoitCoup",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
+      "type": "QTE",
+      "qteType": "smash",
+      "sequence": [
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp",
+        "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp", "ArrowUp"
+      ],
+      "success": "B1-03-FFS_brasRobotEndomage",
+      "failure": "B1-03-FFF_brasRobotEndomage",
+      "time": 3,
+      "defaultOutcome": "failure"
+    },
+  
+    {
+      "id": "B1-03-SSS_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "B1-04_lisaGagneCombat"
+    },
+  
+    {
+      "id": "B1-03-SSF_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "B1-04_lisaGagneCombat"
+    },
+  
+    {
+      "id": "B1-03-SFS_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "B1-04_lisaGagneCombat"
+    },
+  
+    {
+      "id": "B1-03-SFF_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "B1-04_eveGagneCombat"
+    },
+  
+    {
+      "id": "B1-03-FSS_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "B1-04_lisaGagneCombat"
+    },
+  
+    {
+      "id": "B1-03-FSF_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "B1-04_eveGagneCombat"
+    },
+  
+    {
+      "id": "B1-03-FFS_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "B1-04_eveGagneCombat"
+    },
+  
+    {
+      "id": "B1-03-FFF_brasRobotEndomage",
+      "visibleOnTree" : false,
+      "video": "brasRobotEndomage",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
+      "type": "Cinematic",
+      "next": "B1-04_eveGagneCombat"
+    },
+  
+    {
+      "id": "B1-04_lisaGagneCombat",
+      "visibleOnTree" : false,
+      "video": "lisaGagneCombat",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaGagneCombat.mp4",
+      "type": "Cinematic",
+      "next": "B1-05_enPrison"
+    },
+    
+    {
+      "id": "B1-04_eveGagneCombat",
+      "visibleOnTree" : false,
+      "video": "eveGagneCombat",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaGagneCombat.mp4",
+      "type": "Cinematic",
+      "next": "B1-05_enPrison"
+    },
+  
+    {
+      "id": "B1-05_enPrison",
+      "visibleOnTree" : false,
+      "video": "enPrison",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/enPrison.mp4",
+      "type": "Cinematic",
+      "next": "B1-06_sortieDePrison"
+    },
+  
+      {
+      "id": "B1-06_sortieDePrison",
+      "visibleOnTree" : true,
+      "name": "Malo déverouille la porte de la prison et fait sortir Eve et Emelisa",
+      "title": "Chapitre",
+      "video": "sortieDePrison",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/sortieDePrison.mp4",
+      "type": "Choice",
+      "choices": [
+        {
+          "text": "Abandonner la clé",
+          "next": "B1-fin_courtMartialeMalo"
+        },
+        {
+          "text": "Récupérer la clé",
+          "next": "B1-fin_volerLaCle"
+        }
+      ],
+      "time": 5,
+      "defaultChoice": "1"
+    },
+  
+    {
+      "id": "B1-fin_volerLaCle",
+      "visibleOnTree" : false,
+      "video": "volerLaCle",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/volerLaCle.mp4",
+      "type": "Cinematic",
+      "next": null
+    },
+  
+    {
+      "id": "B1-fin_courtMartialeMalo",
+      "visibleOnTree" : false,
+      "video": "courtMartialeMalo",
+      "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/volerLaCle.mp4",
+      "type": "Cinematic",
+      "next": null
+    }
+  ]
