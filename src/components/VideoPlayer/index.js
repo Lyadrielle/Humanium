@@ -25,6 +25,15 @@ class VideoPlayer extends Component {
     const {videoTimeout} = this.state
     clearTimeout(videoTimeout)
   }
+
+  handleQTE = ({ playedSeconds }) => {
+    const { duration } = this.state
+    const { onQTE, QTETime } = this.props
+    const remainingTime = duration - playedSeconds
+    if (remainingTime <= QTETime) {
+      onQTE()
+    }
+  }
   
   render() {
     const {
@@ -40,6 +49,7 @@ class VideoPlayer extends Component {
       displayMenu,
       onPause,
       onPlay,
+      lastPlayedSecond,
     } = this.props
 
       return (
@@ -63,6 +73,8 @@ class VideoPlayer extends Component {
           muted={muted}
           onPlay={() => this.setState({playing: true})}
           onPause={() => this.setState({playing: false})}
+          onDuration={duration => this.setState({ duration })}
+          onProgress={this.handleQTE}
         />
 
         {

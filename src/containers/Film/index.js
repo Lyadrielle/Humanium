@@ -37,38 +37,22 @@ class Film extends Component {
     const currentScene = nodes[nodes.length - 1]
     const video = document.createElement('video')
     const videoLink = currentScene.videoLink || api.generateVideoLink(currentScene.video)
-    console.log(videoLink)
+    this.setState({
+      QTETime: currentScene.time || 0,
+    })
     video.src = videoLink
     return video.ondurationchange = () => {
-      const totalVideoDuration = 1000 * (video.duration - (currentScene.time || 0))
-      const timeout = setTimeout(() => this.setState({ executeAction: true }), totalVideoDuration)
       this.setState({
         videoLink,
         currentScene,
-        timeout,
-        totalVideoDuration,
-        startPayTime: (new Date()).getTime()
       })
     }
   }
 
-  pause(state, setState) {
+  onQTE(state, setState) {
     return () => {
-      const { startPayTime, totalVideoDuration, timeout } = state
-      clearTimeout(timeout)
-      const currentTime = (new Date()).getTime() - startPayTime
-      const remainingTime = totalVideoDuration - currentTime
-      setState({
-        remainingTime
-      })
-    }
-  }
-
-  play(state, setState) {
-    return () => {
-      const { remainingTime } = state
       this.setState({
-        timeout: setTimeout(() => setState({ executeAction: true }), remainingTime)
+        executeAction: true
       })
     }
   }
@@ -116,7 +100,7 @@ class Film extends Component {
   }
 
   render() {
-    const { currentScene, executeAction, videoLink } = this.state
+    const { currentScene, executeAction, videoLink, QTETime } = this.state
     const { video } = currentScene || {}
 
     const actionMap = {
@@ -149,8 +133,8 @@ class Film extends Component {
         {video && displayVideoPlayer(
           videoLink,
           !executeAction,
-          this.pause(this.state, (state) => this.setState(state)),
-          this.play(this.state, (state) => this.setState(state))
+          this.onQTE(this.state, (state) => this.setState(state)),
+          QTETime
         )}
         {executeAction && actionMap[currentScene.type](currentScene)}
       </div>
@@ -158,13 +142,13 @@ class Film extends Component {
   }
 }
 
-function displayVideoPlayer(videoLink, displayMenu, onPause, onPlay) {
+function displayVideoPlayer(videoLink, displayMenu, onQTE, QTETime) {
   return (
     <VideoPlayer
       videoLink={videoLink}
       displayMenu={displayMenu}
-      onPause={onPause}
-      onPlay={onPlay}
+      onQTE={onQTE}
+      QTETime={QTETime}
     />
   )
 }

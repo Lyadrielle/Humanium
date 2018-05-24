@@ -15,15 +15,12 @@ class TreeContainer extends Component {
   }
 
   async loadContext() {
-    console.log("Starting loadContext")
     const retryLoadContext = () => setTimeout(this.loadContext, 1000)
     let context = localStorage.getItem('context')
 
     if (!context) {
-      console.log("No context found")
       const { success, newContext } = await api.get({ path: 'tree/init' })
       if (!success) {
-        console.log("Error getting the context")
         return retryLoadContext()
       }
       localStorage.setItem('context', newContext)
@@ -31,13 +28,10 @@ class TreeContainer extends Component {
     }
     const { success, status, nodes, percentageTable } = await api.get({ path: 'tree/read-path', headers: { context } })
     if (!success) {
-      console.log("Error getting the tree")
       if (status === 500) localStorage.removeItem('context')
       return retryLoadContext()
     }
-    console.log("Node retreived with success")
     this.setState({ nodes: nodes, percentageTable: percentageTable })
-    console.log(percentageTable)
   }
 
   componentDidMount() {
@@ -105,20 +99,14 @@ class TreeContainer extends Component {
   }
 
   getPercentage(node, nextNode) {
-    console.log(node)
-    console.log(nextNode)
     let nodeStats = null
     let result = null
     let firstOrSecond
     if(nextNode) firstOrSecond = this.getColumnName(node, nextNode.id)
-    console.log(firstOrSecond)
     nodeStats = this.state.percentageTable.find((item)=>{
       return (item.node_id === node.id)
     })
-    console.log(nodeStats)
     if (nodeStats != null) result = nodeStats[firstOrSecond]/(nodeStats['first'] + nodeStats['second']) * 100
-    console.log("coucou")
-    console.log(result)
     return result
   }
 
