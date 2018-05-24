@@ -18,6 +18,7 @@ class TutoModal extends Component {
   
   render() {
     const { show, proceed, dismiss, cancel, confirmation, options } = this.props
+<<<<<<< ee14808230cdbaca4199c6b117b5c17588624c43
     let {width: windowWidth, height: windowHeight} = this.state
     console.log(`------------------------------------`)
     console.log(`WIDTH: ${windowWidth / 2}\nHEIGHT: ${windowHeight / 2}`)
@@ -42,6 +43,22 @@ class TutoModal extends Component {
         <div className="body">
           <TutoBlock name='choice'/>
           <TutoBlock name='qte'/>
+=======
+
+    return (
+      <Rodal visible={ show }
+             onClose={ () => cancel() }
+             closeMaskOnClick={true}
+             width='100%'
+             height='100%'
+             >
+        <div className="header">
+          <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
+          Tutoriel
+        </div>
+        <div className="body">
+          
+>>>>>>> showing Modal tutorial
         </div>
       </Rodal>
     )
