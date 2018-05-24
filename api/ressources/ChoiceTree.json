@@ -229,7 +229,7 @@
     "id": "A1-03-SS_eveRecoitCoup",
     "visibleOnTree" : false,
     "video": "eveRecoitCoup",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
     "type": "QTE",
     "qteType": "smash",
     "sequence": [
@@ -263,7 +263,7 @@
     "id": "A1-03-FS_eveRecoitCoup",
     "visibleOnTree" : false,
     "video": "eveRecoitCoup",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
     "type": "QTE",
     "qteType": "smash",
     "sequence": [
@@ -297,7 +297,7 @@
     "id": "A1-03-SSS_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "A1-04_lisaGagneCombat"
   },
@@ -306,7 +306,7 @@
     "id": "A1-03-SSF_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "A1-04_lisaGagneCombat"
   },
@@ -315,7 +315,7 @@
     "id": "A1-03-SFS_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "A1-04_lisaGagneCombat"
   },
@@ -324,7 +324,7 @@
     "id": "A1-03-SFF_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "A1-04_eveGagneCombat"
   },
@@ -333,7 +333,7 @@
     "id": "A1-03-FSS_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "A1-04_lisaGagneCombat"
   },
@@ -342,7 +342,7 @@
     "id": "A1-03-FSF_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "A1-04_eveGagneCombat"
   },
@@ -351,7 +351,7 @@
     "id": "A1-03-FFS_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "A1-04_eveGagneCombat"
   },
@@ -360,7 +360,7 @@
     "id": "A1-03-FFF_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "A1-04_eveGagneCombat"
   },
@@ -369,7 +369,7 @@
     "id": "A1-04_lisaGagneCombat",
     "visibleOnTree" : false,
     "video": "lisaGagneCombat",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/toPrison.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaGagneCombat.mp4",
     "type": "Cinematic",
     "next": "A1-05_aloisPrendCle"
   },
@@ -378,7 +378,7 @@
     "id": "A1-04_eveGagneCombat",
     "visibleOnTree" : false,
     "video": "eveGagneCombat",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/toPrison.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaGagneCombat.mp4",
     "type": "Cinematic",
     "next": "A1-05_aloisPrendCle"
   },
@@ -389,7 +389,7 @@
     "name": "Alois récupère la clé ALPC",
     "title": "Chapitre",
     "video": "aloisPrendCle",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/AfterFightAloisSave.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/aloisPrendCle.mp4",
     "type": "Choice",
     "choices": [
       {
@@ -409,7 +409,7 @@
     "id": "A1-fin_courtMartialeAlois",
     "visibleOnTree" : false,
     "video": "courtMartialeAlois",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/giveUpAlois.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/courtMartialeAlois.mp4",
     "type": "Cinematic",
     "next": null
   },
@@ -418,7 +418,7 @@
     "id": "A1-fin_blesserAlois",
     "visibleOnTree" : false,
     "video": "blesserAlois",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/killAlois.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/blesserAlois.mp4",
     "type": "Cinematic",
     "next": null
   },
@@ -438,7 +438,7 @@
     "name": "Emlisa retrouve Eve et part à sa poursuite.",
     "title": "Chapitre",
     "video": "coursePoursuite",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/coursePoursuite_2.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/coursePoursuite.mp4",
     "type": "QTE",
     "qteType": "smash",
     "sequence": [
@@ -489,8 +489,8 @@
   {
     "id": "B1-03-SS_eveRecoitCoup",
     "visibleOnTree" : false,
-    "video": "eveGetsPunched",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
+    "video": "eveRecoitCoup",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
     "type": "QTE",
     "qteType": "smash",
     "sequence": [
@@ -523,8 +523,8 @@
   {
     "id": "B1-03-FS_eveRecoitCoup",
     "visibleOnTree" : false,
-    "video": "eveGetsPunched",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaRecoitCoup.mp4",
+    "video": "eveRecoitCoup",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/eveRecoitCoup.mp4",
     "type": "QTE",
     "qteType": "smash",
     "sequence": [
@@ -558,7 +558,7 @@
     "id": "B1-03-SSS_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "B1-04_lisaGagneCombat"
   },
@@ -567,7 +567,7 @@
     "id": "B1-03-SSF_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "B1-04_lisaGagneCombat"
   },
@@ -576,7 +576,7 @@
     "id": "B1-03-SFS_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "B1-04_lisaGagneCombat"
   },
@@ -585,7 +585,7 @@
     "id": "B1-03-SFF_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "B1-04_eveGagneCombat"
   },
@@ -594,7 +594,7 @@
     "id": "B1-03-FSS_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "B1-04_lisaGagneCombat"
   },
@@ -603,7 +603,7 @@
     "id": "B1-03-FSF_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "B1-04_eveGagneCombat"
   },
@@ -612,7 +612,7 @@
     "id": "B1-03-FFS_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "B1-04_eveGagneCombat"
   },
@@ -621,7 +621,7 @@
     "id": "B1-03-FFF_brasRobotEndomage",
     "visibleOnTree" : false,
     "video": "brasRobotEndomage",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasEndommageLisaGagne.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/brasRobotEndomage.mp4",
     "type": "Cinematic",
     "next": "B1-04_eveGagneCombat"
   },
@@ -630,16 +630,16 @@
     "id": "B1-04_lisaGagneCombat",
     "visibleOnTree" : false,
     "video": "lisaGagneCombat",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/toPrison.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaGagneCombat.mp4",
     "type": "Cinematic",
     "next": "B1-05_enPrison"
   },
-
+  
   {
     "id": "B1-04_eveGagneCombat",
     "visibleOnTree" : false,
     "video": "eveGagneCombat",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/toPrison.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/lisaGagneCombat.mp4",
     "type": "Cinematic",
     "next": "B1-05_enPrison"
   },
@@ -648,7 +648,7 @@
     "id": "B1-05_enPrison",
     "visibleOnTree" : false,
     "video": "enPrison",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/toPrison.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/enPrison.mp4",
     "type": "Cinematic",
     "next": "B1-06_sortieDePrison"
   },
@@ -664,7 +664,7 @@
     "choices": [
       {
         "text": "Abandonner la clé",
-        "next": "B1-fin_courtMartiale"
+        "next": "B1-fin_courtMartialeMalo"
       },
       {
         "text": "Récupérer la clé",
@@ -679,16 +679,16 @@
     "id": "B1-fin_volerLaCle",
     "visibleOnTree" : false,
     "video": "volerLaCle",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/killMaloEVe.mp4",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/volerLaCle.mp4",
     "type": "Cinematic",
     "next": null
   },
 
   {
-    "id": "B1-fin_courtMartiale",
+    "id": "B1-fin_courtMartialeMalo",
     "visibleOnTree" : false,
-    "video": "courtMartiale",
-    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/killMaloEVe.mp4",
+    "video": "courtMartialeMalo",
+    "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/volerLaCle.mp4",
     "type": "Cinematic",
     "next": null
   }
