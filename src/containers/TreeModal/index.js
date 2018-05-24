@@ -26,7 +26,7 @@ class TreeModal extends Component {
 
           <div className ="picture-stats-container">
           <img className="thumbnail" src={"./assets/images/tree/" + options.node.video + ".jpg"} alt="thumbnail" />
-          {options.percentage?<p><span className="percentage">{options.percentage}%</span> <br/>
+              {options.percentage?<p><span className="percentage">{Math.round(options.percentage)}%</span> <br/>
               {options.node.type ==='QTE'&&' des joueurs ont obtenu le même résultat'}
               {options.node.type ==='Choice'&&' des joueurs ont fait le même choix que vous'}
           </p>:''}
