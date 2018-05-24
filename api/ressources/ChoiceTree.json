@@ -110,7 +110,7 @@
     "video": "laisserPartirMalo",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/laisserPartirMalo.mp4",
     "type": "Cinematic",
-    "next": null
+    "next": "1-02_dansLaRue"
   },
 
   {
@@ -119,7 +119,7 @@
     "video": "arreterMalo",
     "videoLink": "https://s3.eu-west-3.amazonaws.com/humanium/export_1080p/arreterMalo.mp4",
     "type": "Cinematic",
-    "next": null
+    "next": "1-02_dansLaRue"
   },
 
 {
