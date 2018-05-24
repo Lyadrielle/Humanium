@@ -12,6 +12,8 @@ module.exports = {
   isIdInDatabase,
   updateNode,
   getValueFromColumn,
+  getPercentage,
+  getTable,
 }
 
 const tableName = 'humanium_nodeStatistique'
@@ -172,7 +174,7 @@ function updateNode(db, id, columnName) {
 }
 
 function getPercentage(db, id, columnName) {
-  const sql = `SELECT (first, second)
+  const sql = `SELECT first, second
     FROM ${tableName}
     WHERE ${primKey} = ?`
 
@@ -181,8 +183,22 @@ function getPercentage(db, id, columnName) {
         if(err) return reject(err)
         return resolve(row
           ? (row[columnName]/(row['first'] + row['second'])) * 100
-          : false
+          : undefined
         )
       })
     })
+}
+
+function getTable(db) {
+  const sql = `SELECT *
+    FROM ${tableName}`
+
+  return new Promise((resolve, reject) => {
+    db.all(sql, (err, result) => {
+      if(err) return reject(err)
+      return resolve(result
+        ? result
+        : undefined)
+    })
+  })
 }
