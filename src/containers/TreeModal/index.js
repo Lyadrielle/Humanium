@@ -20,7 +20,7 @@ class TreeModal extends Component {
         <div className="header">
           <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
           Reprendre la lecture
-</div>
+        </div>
         <div className="body">
           Vous êtes sur le point de vous rendre au moment suivant de l'histoire : <br></br>
 
