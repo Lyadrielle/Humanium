@@ -68,8 +68,8 @@ class TreeContainer extends Component {
   getNextNode(node) {
     let nextNode = null
     if (node.type === 'QTE') {
-      nextNode = this.state.nodes.find((node, i) => {
-        return (node.id === node.faillure || node.id === node.success)
+      nextNode = this.state.nodes.find((item, i) => {
+        return (item.id === node.faillure || item.id === node.success)
       })
     }
     else if (node.type === 'Choice') {
@@ -102,11 +102,18 @@ class TreeContainer extends Component {
     let nodeStats = null
     let result = null
     let firstOrSecond
+    console.log("NODE&NEXT")
+    console.log(node)
+    console.log(nextNode)
     if(nextNode) firstOrSecond = this.getColumnName(node, nextNode.id)
     nodeStats = this.state.percentageTable.find((item)=>{
-      return (item.node_id === node.id)
+      return (item.node_id == node.id)
     })
+
+    console.log(firstOrSecond)
     if (nodeStats != null) result = nodeStats[firstOrSecond]/(nodeStats['first'] + nodeStats['second']) * 100
+    console.log(nodeStats)
+    console.log(this.state.percentageTable)
     return result
   }
 
@@ -125,7 +132,7 @@ class TreeContainer extends Component {
         }
         else {
           return (<div key={nodes.length - 1} className="tree-components">
-            <TreeButton node={nodes[i]} onNodeSelect={this.showModal} percentage = { this.getPercentage(nodes[i], this.getNextNode(nodes[i])) ===''?null:this.getPercentage(nodes[i], this.getNextNode(nodes[i]))} />
+            <TreeButton node={nodes[i]} onNodeSelect={this.showModal} percentage = { this.getPercentage(nodes[i], this.getNextNode(nodes[i])) ===''? null : this.getPercentage(nodes[i], this.getNextNode(nodes[i]))} />
           </div>)
         }
       })
