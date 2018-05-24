@@ -18,12 +18,16 @@ class TutoModal extends Component {
   
   render() {
     const { show, proceed, dismiss, cancel, confirmation, options } = this.props
+<<<<<<< 326fb7e60d29849925c216e138b5e8f04fcd6f47
 <<<<<<< ee14808230cdbaca4199c6b117b5c17588624c43
+=======
+>>>>>>> essaie desespere de faire un tuto
     let {width: windowWidth, height: windowHeight} = this.state
     console.log(`------------------------------------`)
     console.log(`WIDTH: ${windowWidth / 2}\nHEIGHT: ${windowHeight / 2}`)
     console.log(`------------------------------------`)
     
+<<<<<<< 326fb7e60d29849925c216e138b5e8f04fcd6f47
     return (
       <Rodal visible={ show }
         onClose={ () => cancel() }
@@ -45,20 +49,32 @@ class TutoModal extends Component {
           <TutoBlock name='qte'/>
 =======
 
+=======
+>>>>>>> essaie desespere de faire un tuto
     return (
       <Rodal visible={ show }
-             onClose={ () => cancel() }
-             closeMaskOnClick={true}
-             width='100%'
-             height='100%'
-             >
+        onClose={ () => cancel() }
+        closeMaskOnClick={true}
+        width={windowWidth / 1.3}
+        height={windowHeight / 1.3}
+      >
         <div className="header">
-          <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
-          Tutoriel
+          <div>
+            <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
+            <h5>Tutoriel</h5>
+          </div>
+          <div>
+          <p>Lorsque vous entendez ce son, placez vos mains sur le clavier. Vous allez devoir intéragir soit en faisant un choix, soit en exécutant un QTE</p>
+        </div>
         </div>
         <div className="body">
+<<<<<<< 326fb7e60d29849925c216e138b5e8f04fcd6f47
           
 >>>>>>> showing Modal tutorial
+=======
+          <TutoBlock name='choice'/>
+          <TutoBlock name='qte'/>
+>>>>>>> essaie desespere de faire un tuto
         </div>
       </Rodal>
     )
