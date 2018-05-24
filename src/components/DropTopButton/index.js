@@ -13,7 +13,6 @@ class DropTopButton extends Component {
        <GlitchButton onClick={() => {this.props.onClick(item)}} text = {item}/>
       </li>
     )
-    console.log(listItems)
     return (
       <ul className = "drop-possibilities">{listItems}</ul>
     )
