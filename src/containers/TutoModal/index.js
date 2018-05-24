@@ -1,27 +1,47 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { confirmable } from 'react-confirm';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { confirmable } from 'react-confirm'
 import Rodal from 'rodal'
+
+import TutoBlock from '../../components/TutoBlock'
 
 import './style.css'
 
 class TutoModal extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    }
+  }
+  
   render() {
     const { show, proceed, dismiss, cancel, confirmation, options } = this.props
-
+    let {width: windowWidth, height: windowHeight} = this.state
+    console.log(`------------------------------------`)
+    console.log(`WIDTH: ${windowWidth / 2}\nHEIGHT: ${windowHeight / 2}`)
+    console.log(`------------------------------------`)
+    
     return (
       <Rodal visible={ show }
-             onClose={ () => cancel() }
-             closeMaskOnClick={true}
-             width='100%'
-             height='100%'
-             >
+        onClose={ () => cancel() }
+        closeMaskOnClick={true}
+        width={windowWidth / 1.3}
+        height={windowHeight / 1.3}
+      >
         <div className="header">
-          <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
-          Tutoriel
+          <div>
+            <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
+            <h5>Tutoriel</h5>
+          </div>
+          <div>
+          <p>Lorsque vous entendez ce son, placez vos mains sur le clavier. Vous allez devoir intéragir soit en faisant un choix, soit en exécutant un QTE</p>
+        </div>
         </div>
         <div className="body">
-          
+          <TutoBlock name='choice'/>
+          <TutoBlock name='qte'/>
         </div>
       </Rodal>
     )
