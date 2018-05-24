@@ -44,11 +44,11 @@ class TreeContainer extends Component {
     this.loadContext()
   }
 
-  showModal(node) {
-    const currentNode = node
-    treeConfirm('', currentNode).then(
+  showModal(node, percentage) {
+    const options = { node : node, percentage: percentage }
+    treeConfirm('', options).then(
       (result) => {
-        this.backToContext(currentNode)
+        this.backToContext(node)
       },
       (result) => {
       }
@@ -72,16 +72,18 @@ class TreeContainer extends Component {
   }
 
   getNextNode(node) {
+    let nextNode = null
     if (node.type === 'QTE') {
-      const nextNode = this.state.nodes.find((node, i) => {
+      nextNode = this.state.nodes.find((node, i) => {
         return (node.id === node.faillure || node.id === node.success)
       })
     }
     else if (node.type === 'Choice') {
-      const nextNode = this.state.nodes.find((node, i) => {
-        return (node.id === node.choices[0].next || node.id === node.choices[1].next)
+      nextNode = this.state.nodes.find((item, i) => {
+        return (item.id === node.choices[0].next || item.id === node.choices[1].next)
       })
     }
+    return nextNode
   }
 
   getColumnName(currentNode, nextId) {
@@ -105,14 +107,18 @@ class TreeContainer extends Component {
   getPercentage(node, nextNode) {
     console.log(node)
     console.log(nextNode)
-    firstOrSecond = this.getColumnName(node, nextNode)
+    let nodeStats = null
+    let result = null
+    const firstOrSecond = this.getColumnName(node, nextNode.id)
+    console.log(firstOrSecond)
     nodeStats = this.state.percentageTable.find((item)=>{
-      return (item.nodeId === nextNode.id)
+      return (item.node_id === node.id)
     })
-    result = resolve(nodeStats
-      ? (nodeStats[columnName]/(nodeStats['first'] + nodeStats['second'])) * 100
-      : undefined
-    )
+    console.log(nodeStats)
+    if (nodeStats != null) result = nodeStats[firstOrSecond]/(nodeStats['first'] + nodeStats['second']) * 100
+    console.log("coucou")
+    console.log(result)
+    return result
   }
 
   displayTreeNodes() {
@@ -124,13 +130,13 @@ class TreeContainer extends Component {
       nodes.map((node, i) => {
         if (i !== nodes.length - 1) {
           return (<div key={i} className="tree-components">
-            <TreeButton node={nodes[i]} percentage = { this.getPercentage(node[i], getNextNode(node[i])) } onNodeSelect={this.showModal} />
+            <TreeButton node={nodes[i]} percentage = { this.getPercentage(nodes[i], this.getNextNode(nodes[i])) } onNodeSelect={this.showModal} />
             <div className="line"></div>
           </div>)
         }
         else {
           return (<div key={nodes.length - 1} className="tree-components">
-            <TreeButton node={nodes[i]} onNodeSelect={this.showModal} percentage = { this.getPercentage(node[i], getNextNode(node[i])) } />
+            <TreeButton node={nodes[i]} onNodeSelect={this.showModal} />
           </div>)
         }
       })
