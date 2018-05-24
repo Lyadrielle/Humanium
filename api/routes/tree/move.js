@@ -2,7 +2,7 @@ const { encrypt } = require('aes256')
 
 const { choiceTree } = require('../../core/tree')
 const { updateContext } = require('../../core/context')
-const { openConnection, updateNode } = require('../../core/sqlite')
+const { openConnection, updateNode, getPercentage, close} = require('../../core/sqlite')
 
 module.exports = {
   type: 'POST',
@@ -28,9 +28,11 @@ async function updateTreePath(req) {
   const lastNodeId = path[path.length - 1]
   const prevNode = choiceTree.find(({ id }) => id === lastNodeId)
 
-  if(prevNode.type !== 'Cinematic')
-    updateDataBase(prevNode, next)
 
+  if(prevNode.type !== 'Cinematic') {
+    updateDataBase(prevNode, next)
+  }
+  
   return  {
     success: isPathValid,
     currentNode: choiceTree.find(e => e.id === next),
@@ -78,9 +80,7 @@ function updateDataBase(currentNode, nextId) {
       firstOrSecond = 'second'
   }
 
-  updateNode(
-    openConnection(),
-    currentNode.id,
-    firstOrSecond
-  )
+  let db = openConnection()
+  updateNode(db, currentNode.id, firstOrSecond)
+  close(db)
 }
