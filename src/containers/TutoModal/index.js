@@ -7,13 +7,21 @@ import './style.css'
 
 class TutoModal extends Component {
   render() {
-    const { show } = this.props
+    const { show, proceed, dismiss, cancel, confirmation, options } = this.props
+
     return (
-      <Rodal visible={show}
-        onClose={() => cancel()}
-        closeMaskOnClick={true}
-      >
-        <div className="popup">
+      <Rodal visible={ show }
+             onClose={ () => cancel() }
+             closeMaskOnClick={true}
+             width='100%'
+             height='100%'
+             >
+        <div className="header">
+          <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
+          Tutoriel
+        </div>
+        <div className="body">
+          
         </div>
       </Rodal>
     )

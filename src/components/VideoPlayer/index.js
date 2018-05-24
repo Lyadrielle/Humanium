@@ -67,7 +67,7 @@ class VideoPlayer extends Component {
 
         {
           displayMenu && !menuHidden ?
-          <VideoMenu
+          <VideoMenu showTutoModalFunction = {this.props.showTutoModalFunction}
             onPlayButton={(value) => {
               this.setState({playing: value})
               if (onPause && !value) onPause()

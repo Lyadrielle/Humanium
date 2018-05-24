@@ -6,6 +6,7 @@ import Choice from '../../components/choice'
 import MobileGuard from '../MobileGuard'
 import api from '../../common/api'
 import { isMobile } from 'react-device-detect';
+import tutoConfirm from '../../common/tutoConfirm'
 
 import './style.css'
 
@@ -115,6 +116,27 @@ class Film extends Component {
     clearTimeout(timeout)
   }
 
+  displayVideoPlayer(videoLink, displayMenu, onPause, onPlay) {
+    return (
+      <VideoPlayer
+        showTutoModalFunction = {this.showTutoModal}
+        videoLink={videoLink}
+        displayMenu={displayMenu}
+        onPause={onPause}
+        onPlay={onPlay}
+      />
+    )
+  }
+
+  showTutoModal = () => {
+    tutoConfirm('').then(
+      (result) => {
+      },
+      (result) => {
+      }
+    )
+  }
+
   render() {
     const { currentScene, executeAction, videoLink } = this.state
     const { video } = currentScene || {}
@@ -146,36 +168,28 @@ class Film extends Component {
 
     return (
       <div className="page-film">
-        {video && displayVideoPlayer(
-          videoLink,
-          !executeAction,
-          this.pause(this.state, (state) => this.setState(state)),
-          this.play(this.state, (state) => this.setState(state))
-        )}
+        { 
+            video && this.displayVideoPlayer(
+            videoLink,
+            !executeAction,
+            this.pause(this.state, (state) => this.setState(state)),
+            this.play(this.state, (state) => this.setState(state))
+          ) 
+        }
         {executeAction && actionMap[currentScene.type](currentScene)}
       </div>
     )
   }
 }
 
-function displayVideoPlayer(videoLink, displayMenu, onPause, onPlay) {
-  return (
-    <VideoPlayer
-      videoLink={videoLink}
-      displayMenu={displayMenu}
-      onPause={onPause}
-      onPlay={onPlay}
-    />
-  )
-}
 
 function displayQTE(qteType, sequence, onComplete) {
   return (
     <Qte
-      sequence={sequence}
-      qteType={qteType}
-      time={5}
-      onComplete={onComplete}
+      sequence={ sequence }
+      qteType={ qteType }
+      time={ 5 }
+      onComplete={ onComplete }
     />
   )
 }

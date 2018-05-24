@@ -177,9 +177,7 @@ class VideoMenu extends Component {
                   marginRight:'30px'
                 }}
                 onClick = {
-                  ()=> {
-                    this.setState(prevState =>({qualityListOpen:!prevState.qualityListOpen}))
-                  }
+                  this.props.showTutoModalFunction
                 }
               />
 
