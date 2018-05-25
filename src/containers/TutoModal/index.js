@@ -7,7 +7,7 @@ import './style.css'
 
 class TutoModal extends Component {
   render() {
-    const { show } = this.props
+    const { show, proceed, dismiss, cancel, confirmation, options } = this.props
     return (
       <Rodal visible={show}
         onClose={() => cancel()}

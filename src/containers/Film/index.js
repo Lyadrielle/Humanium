@@ -5,7 +5,8 @@ import Qte from '../../components/qte'
 import Choice from '../../components/choice'
 import MobileGuard from '../MobileGuard'
 import api from '../../common/api'
-import { isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect'
+import tutoConfirm from '../../common/tutoConfirm'
 
 import './style.css'
 
@@ -90,13 +91,34 @@ class Film extends Component {
 
   componentDidMount() {
     if (!isMobile) {
-      this.loadContext() 
+      this.loadContext()
     }
   }
 
   componentWillUnmount() {
     const timeout = this.state.timeout
     clearTimeout(timeout)
+  }
+
+  displayVideoPlayer(videoLink, displayMenu, onQTE, QTETime) {
+    return (
+      <VideoPlayer
+        showTutoModalFunction = { this.showTutoModal }
+        videoLink={videoLink}
+        displayMenu={displayMenu}
+        onQTE={onQTE}
+        QTETime={QTETime}
+      />
+    )
+  }
+
+  showTutoModal = () => {
+    tutoConfirm('').then(
+      (result) => {
+      },
+      (result) => {
+      }
+    )
   }
 
   render() {
@@ -123,14 +145,14 @@ class Film extends Component {
     if (isMobile) {
       return (
         <div className="app">
-          <MobileGuard message={MobileGuard.messages.mobile}/>
+          <MobileGuard message={MobileGuard.messages.mobile} />
         </div>
       )
     }
 
     return (
       <div className="page-film">
-        {video && displayVideoPlayer(
+        {video && this.displayVideoPlayer(
           videoLink,
           !executeAction,
           this.onQTE(this.state, (state) => this.setState(state)),
@@ -140,17 +162,6 @@ class Film extends Component {
       </div>
     )
   }
-}
-
-function displayVideoPlayer(videoLink, displayMenu, onQTE, QTETime) {
-  return (
-    <VideoPlayer
-      videoLink={videoLink}
-      displayMenu={displayMenu}
-      onQTE={onQTE}
-      QTETime={QTETime}
-    />
-  )
 }
 
 function displayQTE(qteType, sequence, onComplete) {
