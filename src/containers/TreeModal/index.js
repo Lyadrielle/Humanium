@@ -15,13 +15,29 @@ class TreeModal extends Component {
 
   render() {
     const { show, proceed, dismiss, cancel, confirmation, options } = this.props
+    const popUpWidth = (window.innerWidth / 3) >= 400
+      ? (window.innerWidth / 3)
+      : 500
+    
+      const popUpHeight = (window.innerHeight / 2) >= 300
+      ? (window.innerHeight / 2.5)
+      : 300
+
     return (
-      <Rodal visible={show} onClose={() => cancel()} closeMaskOnClick={false} animation="zoom" duration={200}>
+      <Rodal visible={show}
+        onClose={() => cancel()}
+        closeMaskOnClick={false}
+        animation="zoom" duration={200}
+        width= {popUpWidth}
+        height= {popUpHeight}
+      >
         <div className="header">
-          <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
-          Reprendre la lecture
+          <div>
+            <img className="logo-small" src="./assets/images/logo.svg" alt="logo humanium" />
+            <h5>Reprendre la lecture</h5>
+          </div>
         </div>
-        <div className="body">
+        <div className="body body-tree">
           Vous êtes sur le point de vous rendre au moment suivant de l'histoire : <br></br>
 
           <div className ="picture-stats-container">
