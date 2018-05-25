@@ -69,7 +69,7 @@ class TreeContainer extends Component {
     let nextNode = null
     if (node.type === 'QTE') {
       nextNode = this.state.nodes.find((item, i) => {
-        return (item.id === node.faillure || item.id === node.success)
+        return (item.id === node.failure || item.id === node.success)
       })
     }
     else if (node.type === 'Choice') {
@@ -104,7 +104,7 @@ class TreeContainer extends Component {
     let firstOrSecond
     if(nextNode) firstOrSecond = this.getColumnName(node, nextNode.id)
     nodeStats = this.state.percentageTable.find((item)=>{
-      return (item.node_id === node.id)
+      return (item.node_id == node.id)
     })
 
     if (nodeStats != null) result = nodeStats[firstOrSecond]/(nodeStats['first'] + nodeStats['second']) * 100
